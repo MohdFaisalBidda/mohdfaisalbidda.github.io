@@ -31,6 +31,11 @@ function NavBar() {
             id: 5,
             link: "Contact",
         }
+        ,
+        {
+            id: 6,
+            link: <BsMoonStarsFill className='text-black' onClick={()=>setNav(!nav)}/>,
+        }
     ]
 
     return (
@@ -43,7 +48,7 @@ function NavBar() {
                 <ul className='hidden lg:flex'>
                     {lists.map((list: any) => {
                         return <>
-                            <li className='px-8 cursor-pointer capitalize font-medium text-amber-500 hover:scale-105 duration-200 text-2xl'>{list.link}</li>
+                            <li key={list.id} className='px-8 cursor-pointer capitalize font-medium text-amber-500 hover:scale-105 duration-200 text-2xl'>{list.link}</li>
                         </>
                     })}
                 </ul>
@@ -57,7 +62,7 @@ function NavBar() {
 
                     {lists.map((list: any) => {
                         return <>
-                            <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{list.link}</li>
+                            <li key={list.id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{list.link}</li>
                         </>
                     })}
 
