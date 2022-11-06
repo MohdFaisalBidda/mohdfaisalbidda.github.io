@@ -5,7 +5,7 @@ import {AiOutlineRight} from "react-icons/ai";
 function Home() {
     return (
         <>
-            <div className=" h-screen w-full bg-gradient-to-b from-white to-amber-100">
+            <div className=" h-screen w-full bg-gradient-to-b from-white to-amber-100 dark:bg-slate-800">
                 <div className=" max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
                     <div className="my-8">
                         <h2 className=' text-5xl sm:text-6xl font-semibold text-amber-500 pb-5'>I'm a Full stack Developer</h2>
