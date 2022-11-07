@@ -32,13 +32,13 @@ function NavBar(props:any) {
         ,
         {
             id: 6,
-            link: <BsMoonStarsFill className='text-black dark:text-blue-900' onClick={props.themes}/>,
+            link: <BsMoonStarsFill className='text-black dark:text-blue-900' onClick={props.handleTheme}/>,
         }
     ]
 
     return (
         <>
-            <div className=' py-10 px-10 mb-4 flex justify-between items-center text-center w-full dark:bg-black'>
+            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-black'>
                 <div className="">
                     <h1 className=' font-serif font-bold text-amber-500 text-5xl font-signature dark:text-blue-900'>Faisal</h1>
                 </div>
