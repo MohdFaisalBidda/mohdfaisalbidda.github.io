@@ -8,30 +8,30 @@ function NavBar(props:any) {
     
     
 
-    const lists: any = [
+    const lists = [
         {
-            id: 1,
+            id: "1",
             link: "Home",
         },
         {
-            id: 2,
+            id: "2",
             link: "About",
         },
         {
-            id: 3,
+            id: "3",
             link: "Projects",
         },
         {
-            id: 4,
+            id: "4",
             link: "Experience",
         },
         {
-            id: 5,
+            id: "5",
             link: "Contact",
         }
         ,
         {
-            id: 6,
+            id: "6",
             link: <BsMoonStarsFill className='text-black dark:text-blue-900' onClick={props.handleTheme}/>,
         }
     ]
@@ -44,9 +44,9 @@ function NavBar(props:any) {
                 </div>
 
                 <ul className='hidden lg:flex'>
-                    {lists.map((list: any) => {
+                    {lists.map(({id,link}) => {
                         return <>
-                            <li key={list.id} className='px-8 cursor-pointer capitalize font-medium text-amber-500 hover:scale-105 duration-200 text-2xl'>{list.link}</li>
+                            <li key={id} className='px-8 cursor-pointer capitalize font-medium text-amber-500 hover:scale-105 duration-200 text-2xl'>{link}</li>
                         </>
                     })}
                 </ul>
@@ -58,9 +58,11 @@ function NavBar(props:any) {
 
                 {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-amber-600 bg-opacity-50  text-black transition-all duration-200'>
 
-                    {lists.map((list: any) => {
+                    {lists.map(({id,link}) => {
+                        console.log(id);
+                        
                         return <>
-                            <li key={list.id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{list.link}</li>
+                            <li key={id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{link}</li>
                         </>
                     })}
 

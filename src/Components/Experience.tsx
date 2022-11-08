@@ -5,37 +5,37 @@ function Experience() {
 
     const techs = [
         {
-            id: 1,
+            id: '1',
             src: Html,
             title: "HTML",
             style: "shadow-orange-500"
         },
         {
-            id: 2,
+            id: '2',
             src: Html,
             title: "HTML",
             style: "shadow-orange-500"
         },
         {
-            id: 3,
+            id: '3',
             src: Html,
             title: "HTML",
             style: "shadow-orange-500"
         },
         {
-            id: 4,
+            id: '4',
             src: Html,
             title: "HTML",
             style: "shadow-orange-500"
         },
         {
-            id: 5,
+            id: '5',
             src: Html,
             title: "HTML",
             style: "shadow-orange-500"
         },
         {
-            id: 6,
+            id: '6',
             src: Html,
             title: "HTML",
             style: "shadow-orange-500"
@@ -52,10 +52,10 @@ function Experience() {
 
                 <div className=" w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
 
-                    {techs.map(({ id, src, title, style }) => {
+                    {techs.map(({id, src, title, style }) => {
                         return <>
-                            <div className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                                <img src={src} alt="" className='w-28 mx-auto' />
+                            <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
+                                <img  src={src} alt="" className='w-28 mx-auto' />
                                 <p className='mt-4'>{title}</p>
                             </div>
                         </>
