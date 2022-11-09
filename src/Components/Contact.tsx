@@ -3,8 +3,8 @@ import React from 'react'
 function Contact() {
     return (
         <>
-            <div className=" w-full h-screen">
-                <div className=" max-w-screen-lg mx-auto flex flex-col justify-center  h-full p-4">
+            <div className=" w-full h-screen dark:bg-slate-600 bg-gradient-to-t from-white to-amber-50">
+                <div className=" max-w-screen-lg mx-auto flex flex-col justify-center  h-full p-6">
 
                     <div className="mb-10">
                         <p className='text-4xl border-b-4 inline border-amber-700'>Contact</p>

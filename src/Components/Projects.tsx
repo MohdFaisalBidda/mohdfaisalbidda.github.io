@@ -37,16 +37,16 @@ function Projects() {
 
     ]
     return (
-        <>
-            <div className='w-full min-h-screen'>
-                <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full dark:bg-slate-800">
+        <> 
+            <div className='w-full min-h-screen  dark:bg-slate-800 bg-gradient-to-b from-white to-amber-50'>
+                <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full my-10">
                     <div className="pb-8">
                         <p className='text-4xl font-bold inline border-b-4 border-amber-600'>Projects</p>
                         <p className='py-6'>Here is some of my work.</p>
                     </div>
 
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 sm:px-0 justify-center ">
-                        {lists.map((list,index) => {
+                        {React.Children.toArray(lists.map((list,index) => {
                             return <>
                                 <div key={index} className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl items-center justify-center">
                                     {/* <BsGithub className='text-8xl'/> */} <img src={list.src} className='duration-200 hover:scale-105' alt="" />
@@ -57,11 +57,12 @@ function Projects() {
                                 </div>
 
                             </>
-                        })}
+                        }))}
                     </div>
 
                 </div>
             </div>
+
         </>
     )
 }
