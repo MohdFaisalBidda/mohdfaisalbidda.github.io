@@ -19,7 +19,7 @@ function NavBar(props: any) {
         },
         {
             id: 3,
-            link: "Projects",
+            link: "Portfolio",
         },
         {
             id: 4,
@@ -32,15 +32,15 @@ function NavBar(props: any) {
         ,
         {
             id: 6,
-            link: <BsMoonStarsFill className='text-black dark:text-blue-900' onClick={props.handleTheme}/>,
+            link: <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme}/>,
         }
     ]
 
     return (
         <>
-            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-black'>
+            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-black lg:fixed bg-slate-300'>
                 <div className="">
-                    <h1 className=' font-serif font-bold text-amber-500 text-5xl font-signature dark:text-blue-900'>Faisal</h1>
+                    <h1 className='font-bold text-black text-5xl font-signature dark:text-secondary'>Faisal</h1>
                 </div>
 
                 <ul className='hidden lg:flex'>
@@ -49,7 +49,7 @@ function NavBar(props: any) {
                     React.Children.toArray(lists.map((list) => {
                         return <>
                             <div key={list.id}>
-                                <li className='px-8 cursor-pointer capitalize font-thin text-amber-500 hover:scale-105 duration-200 text-2xl'>{list.link}</li>
+                                <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'>{list.link}</li>
                             </div>
                         </>
                     }))}
@@ -57,10 +57,10 @@ function NavBar(props: any) {
 
 
                 <div onClick={() => setNav(!nav)} className="cursor-pointer pr-4 z-10 lg:hidden">
-                    {nav ? <FaTimes className=' dark:text-blue-900' size={25} /> : <FaBars size={25} className=' dark:text-blue-900' />}
+                    {nav ? <FaTimes className=' dark:text-secondary' size={25} /> : <FaBars size={25} className=' dark:text-secondary' />}
                 </div>
 
-                {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-amber-600 bg-opacity-50  text-black transition-all duration-200 dark:bg-slate-600 dark:bg-opacity-80'>
+                {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-amber-400 text-black bg-opacity-70  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
 
                     {lists.map((list) => {
                         return <>

@@ -5,10 +5,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
-    fontFamily:{
-      signature :["Great Vibes"],
-    },
+    extend: {
+      colors:{
+      primary:"#0a192f",
+      secondary:"#64ffdb"
+      },
+      fontFamily:{
+        signature :["Great Vibes"]
+      },
+    },  
   },
   plugins: [],
 }
