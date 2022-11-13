@@ -38,7 +38,7 @@ function NavBar(props: any) {
 
     return (
         <>
-            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl fixed bg-white shadow-lg'>
+            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] fixed bg-white shadow-lg '>
                 <div className="">
                     <h1 className='font-bold text-black text-5xl font-signature dark:text-secondary'>Faisal</h1>
                 </div>

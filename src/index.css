@@ -5,7 +5,5 @@
 @tailwind utilities;
 
 @layer base {
-  html{
-    font-family: 'Shalimar';
-  }
+ 
 }

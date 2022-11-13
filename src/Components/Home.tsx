@@ -19,8 +19,8 @@ function Home() {
                         </div>
                     </div>
 
-                <div className=" rounded-xl mx-auto w-1/2 lg:ml-20">
-                    <img src={Hero} alt=""  className=' rounded-2xl mx-auto w-full md:w-full'/>
+                <div className="rounded-xl mx-auto w-1/2 lg:ml-20">
+                    <img src={Hero} alt=""  className='rounded-2xl mx-auto w-full md:w-full dark:grayscale duration-200 dark:hover:grayscale-0 dark:hover:scale-105 dark:duration-200'/>
                 </div>
 
                 </div>
