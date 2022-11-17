@@ -41,7 +41,7 @@ function SocialLinks() {
         <>
             <div className="flex flex-col top-[55%] left-0 fixed max-lg:hidden">
                 <ul>
-                    { links.map(({ id, child, href, style }) => {
+                    { React.Children.toArray(links.map(({ id, child, href, style }) => {
                         return <>
                             <li key={id} className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-200 bg-amber-300 ${style}`}>
                                 <a href={href} target="_blank"
@@ -53,7 +53,7 @@ function SocialLinks() {
                                 </a>
                             </li>
                         </>
-                    })}
+                    }))}
 
 
                 </ul>

@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import SocialLinks from './Components/SocialLinks';
 import Experience from './Components/Experience';
 import Contact from './Components/Contact';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   const [theme, setTheme] = useState("");
@@ -23,6 +24,7 @@ function App() {
     <ThemeContext.Provider value={{ theme, handleTheme }}>
       <div className={theme} id={theme}>
         <NavBar handleTheme={handleTheme} />
+        <ScrollToTop/>
         <SocialLinks />
         <Home />
         <About />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BsGithub, BsMoonStarsFill } from 'react-icons/bs'
+import { BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill, BsTwitter } from 'react-icons/bs'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { BsSun } from 'react-icons/bs'
 
@@ -38,7 +38,7 @@ function NavBar(props: any) {
 
     return (
         <>
-            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] fixed bg-white shadow-lg '>
+            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] z-[999] fixed bg-white shadow-lg '>
                 <div className="">
                     <h1 className='font-bold text-black text-5xl font-signature dark:text-secondary'>Faisal</h1>
                 </div>
@@ -71,10 +71,10 @@ function NavBar(props: any) {
                     <div className=' pt-10'>
                         <p className='uppercase tracking-widest font-bold'>Let's Connect</p>
                         <div className="my-4 flex justify-between items-center ">
+                            <BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
                             <BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
-                            <BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
-                            <BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
-                            <BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
+                            <BsTwitter className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
+                            <BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
                         </div>
                     </div>
 

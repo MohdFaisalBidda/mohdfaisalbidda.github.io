@@ -1,37 +1,41 @@
 import React from 'react'
-import Card from './Card'
 
 function Projects() {
     const lists = [
         {
             id: 1,
             src: "https://picsum.photos/300/300",
-            code: "Code"
+            code: "Github",
+            preview:"Preview"
         },
         {
             id: 2,
             src: "https://picsum.photos/300/300",
-            code: "Code"
+            code: "Github",
+            preview:"Preview"
 
         },
         {
             id: 3,
             src: "https://picsum.photos/300/300",
-            code: "Code"
+            code: "Github",
+            preview:"Preview"
 
         }
         ,
         {
             id: 4,
             src: "https://picsum.photos/300/300",
-            code: "Code"
+            code: "Github",
+            preview:"Preview"
 
         }
         ,
         {
             id: 5,
             src: "https://picsum.photos/300/300",
-            code: "Code"
+            code: "Github",
+            preview:"Preview"
 
         }
         
@@ -52,7 +56,7 @@ function Projects() {
                                     {/* <BsGithub className='text-8xl'/> */} <img src={list.src} className='z-[9] duration-200 hover:scale-105' alt="" />
                                     <div className="flex items-center justify-center sm:py-0">
                                         <button className=' z-10 w-1/2 px-4 py-3 m-4  duration-200 hover:scale-105 dark:text-secondary text-lg'>{list.code}</button>
-                                        <button className=' w-1/2 px-4 py-3 m-4 duration-200 hover:scale-105 dark:text-secondary text-lg'>{list.code}</button>
+                                        <button className=' w-1/2 px-4 py-3 m-4 duration-200 hover:scale-105 dark:text-secondary text-lg'>{list.preview}</button>
                                     </div>
                                 </div>
 
