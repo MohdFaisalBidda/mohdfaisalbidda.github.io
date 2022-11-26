@@ -23,7 +23,7 @@ function App() {
 
     <ThemeContext.Provider value={{ theme, handleTheme }}>
       <div className={theme} id={theme}>
-        <NavBar handleTheme={handleTheme} />
+        <NavBar handleTheme={handleTheme} theme={theme}/>
         <ScrollToTop/>
         <SocialLinks />
         <Home />

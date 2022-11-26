@@ -8,6 +8,7 @@ function NavBar(props: any) {
 
 
 
+
     const lists = [
         {
             id: 1,
@@ -32,7 +33,7 @@ function NavBar(props: any) {
         ,
         {
             id: 6,
-            link: <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />,
+            link: <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />
         }
     ]
 
@@ -60,7 +61,7 @@ function NavBar(props: any) {
                     {nav ? <FaTimes className=' dark:text-secondary' size={25} /> : <FaBars size={25} className=' dark:text-secondary' />}
                 </div>
 
-                {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-amber-400 text-black bg-opacity-70  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
+                {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-white text-black bg-opacity-80  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
 
                     {lists.map((list) => {
                         return <>
@@ -71,10 +72,10 @@ function NavBar(props: any) {
                     <div className=' pt-10'>
                         <p className='uppercase tracking-widest font-bold'>Let's Connect</p>
                         <div className="my-4 flex justify-between items-center ">
-                            <BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
-                            <BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
-                            <BsTwitter className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
-                            <BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} />
+                            <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/mohd-faisal-bidda'><BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href='https://github.com/MohdFaisalBidda'><BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href='https://twitter.com'><BsTwitter className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href=''><BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                         </div>
                     </div>
 

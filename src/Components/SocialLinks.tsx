@@ -9,7 +9,7 @@ function SocialLinks() {
             child: (
                 <>Linkedin <FaLinkedin size={30} className="text-blue-300" /> </>
             ),
-            href: "https://linkedin.com",
+            href: "https://linkedin.com/in/mohd-faisal-bidda",
             style: 'rounded-tr-md bg-blue-800 text-blue-300'
         },
         {
@@ -17,7 +17,7 @@ function SocialLinks() {
             child: (
                 <>Github <BsGithub size={30} className=" text-gray-500" /> </>
             ),
-            href: "https://github.com",
+            href: "https://github.com/MohdFaisalBidda",
             style: 'rounded-tr-md bg-black text-gray-500'
         },
         {
@@ -44,7 +44,7 @@ function SocialLinks() {
                     { React.Children.toArray(links.map(({ id, child, href, style }) => {
                         return <>
                             <li key={id} className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-200 bg-amber-300 ${style}`}>
-                                <a href={href} target="_blank"
+                                <a rel="noreferrer" href={href} target="_blank"
                                     className='flex justify-between items-center w-full font-bold'
                                 >
                                     <>
