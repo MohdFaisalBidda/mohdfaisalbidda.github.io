@@ -20,7 +20,7 @@ function Home() {
                     </div>
 
                 <div className="rounded-xl mx-auto w-1/2 lg:ml-20">
-                    <link href='https://github.com/MohdFaisalBidda'><img src={Hero} alt=""  className='rounded-2xl mx-auto w-full md:w-full dark:grayscale duration-200 dark:hover:grayscale-0 dark:hover:scale-105 dark:duration-200'/></link>
+                    <a href='https://github.com/MohdFaisalBidda' target="_blank" rel="noreferrer"><img src={Hero} alt=""  className='rounded-2xl mx-auto w-full md:w-full dark:grayscale duration-200 dark:hover:grayscale-0 dark:hover:scale-105 dark:duration-200'/></a>
                 </div>
 
                 </div>
