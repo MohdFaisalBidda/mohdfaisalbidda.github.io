@@ -6,7 +6,7 @@ function Home() {
     return (
         <>
             <div className=" h-screen w-full dark:bg-primary">
-                <div className=" max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
+                <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row pt-20 sm:pt-48">
                     <div className="my-8">
                         <h2 className=' text-5xl sm:text-6xl font-semibold text-black pb-5 dark:text-secondary'>I'm a Full stack Developer</h2>
                         <p className=' text-gray-600 text-md py-4 max-w-md dark:text-gray-400'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt ad ab animi voluptatibus natus eaque repellat excepturi veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ut sed accusantium possimus temporibus </p>
@@ -20,7 +20,7 @@ function Home() {
                     </div>
 
                 <div className="rounded-xl mx-auto w-1/2 lg:ml-20">
-                    <img src={Hero} alt=""  className='rounded-2xl mx-auto w-full md:w-full dark:grayscale duration-200 dark:hover:grayscale-0 dark:hover:scale-105 dark:duration-200'/>
+                    <link href='https://github.com/MohdFaisalBidda'><img src={Hero} alt=""  className='rounded-2xl mx-auto w-full md:w-full dark:grayscale duration-200 dark:hover:grayscale-0 dark:hover:scale-105 dark:duration-200'/></link>
                 </div>
 
                 </div>

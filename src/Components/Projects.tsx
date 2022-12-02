@@ -42,7 +42,7 @@ function Projects() {
     ]
     return (
         <> 
-            <div className='w-full min-h-screen dark:bg-primary py-10'>
+            <div className='w-full min-h-screen dark:bg-primary py-40'>
                 <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                     <div className="pb-8">
                         <p className='text-4xl font-bold inline border-b-4 border-black dark:text-secondary dark:border-secondary'>Portfolio</p>

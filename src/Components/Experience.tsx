@@ -17,57 +17,66 @@ function Experience() {
             id: '1',
             src: html,
             title: "HTML",
-            style: "shadow-orange-500"
+            style: "shadow-orange-500",
+            link:"https://developer.mozilla.org/en-US/docs/Web/HTML"
         },
         {
             id: '2',
             src: javascript,
             title: "Javascript",
-            style: "shadow-orange-500"
+            style: "shadow-yellow-500",
+            link:"https://developer.mozilla.org/en-US/docs/Web/JavaScript"
         },
         {
             id: '3',
             src: bootstrap,
             title: "Bootstrap",
-            style: "shadow-orange-500"
+            style: "shadow-purple-500",
+            link:"https://getbootstrap.com/"
         },
         {
             id: '4',
             src: node,
             title: "Node",
-            style: "shadow-orange-500"
+            style: "shadow-green-500",
+            link:"https://nodejs.org/en/docs/"
         },
         {
             id: '5',
             src: express,
             title: "Express",
-            style: "shadow-orange-500"
+            style: "shadow-gray-500",
+            link:"https://expressjs.com/"
         },
         {
             id: '6',
             src: mysql,
             title: "MySql",
-            style: "shadow-orange-500"
+            style: "shadow-blue-500",
+            link:"https://dev.mysql.com/doc/"
         },
         {
             id: '7',
             src: mongodb,
             title: "MongoDb",
-            style: "shadow-orange-500"
+            style: "shadow-green-500",
+            link:"https://www.mongodb.com/docs/"
         }
         ,
         {
             id: '8',
             src: react,
             title: "React",
-            style: "shadow-orange-500"
+            style: "shadow-blue-500",
+            link:"https://reactjs.org/docs/getting-started.html"
         }
         ,
         {
             id: '9',
             src: tailwind,
             title: "Tailwind CSS",
-            style: "shadow-orange-500"
+            style: "shadow-blue-500",
+            link:"https://v2.tailwindcss.com/docs"
         }
     ]
 
@@ -79,13 +88,13 @@ function Experience() {
                     <p className='py-6 text-gray-600 dark:text-gray-400'>These are the technologies I've worked with</p>
                 </div>
 
-                <div className=" w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
+                <div className=" w-full grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
 
                     {
-                        React.Children.toArray(techs.map(({ id, src, title, style }) => {
+                        React.Children.toArray(techs.map(({ id, src, title, style,link }) => {
                             return <>
                                 <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                                    <img src={src} alt="" className='w-28 mx-auto h-28' />
+                                    <a href={link} target="_blank"><img src={src} alt="" className='w-28 mx-auto h-28' /></a>
                                     <p className='mt-4 text-lg dark:text-secondary'>{title}</p>
                                 </div>
                             </>

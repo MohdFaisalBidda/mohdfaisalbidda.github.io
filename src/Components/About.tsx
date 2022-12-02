@@ -4,9 +4,9 @@ function About() {
   
   return (
     <>
-      <div  className="w-full h-screen dark:bg-primary">
-        <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-          <div className="pb-8">
+      <div  className="w-full h-screen dark:bg-primary pt-32">
+        <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
+          <div className="">
             <p className='text-4xl font-bold inline border-b-4 border-black dark:text-secondary dark:border-secondary'>About</p>
           </div>
           <p className=' text-xl mt-20 dark:text-gray-400'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore numquam minus et excepturi ipsa voluptates reiciendis quia ut eos tenetur? Alias ullam necessitatibus eius aperiam officia vel, dicta iure molestias ea aliquid, tempora tempore vitae, perspiciatis consequatur reprehenderit repellat placeat non! Suscipit vel modi sequi asperiores? Sunt veritatis laborum saepe!</p>

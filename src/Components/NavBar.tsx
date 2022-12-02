@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill, BsTwitter } from 'react-icons/bs'
+import { BsFillPersonLinesFill, BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill, BsTwitter } from 'react-icons/bs'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { BsSun } from 'react-icons/bs'
 
@@ -39,7 +39,7 @@ function NavBar(props: any) {
 
     return (
         <>
-            <div className=' py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] z-[999] fixed bg-white shadow-lg '>
+            <div className='py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] z-[999] fixed bg-white shadow-lg'>
                 <div className="">
                     <h1 className='font-bold text-black text-5xl font-signature dark:text-secondary'>Faisal</h1>
                 </div>
@@ -65,7 +65,7 @@ function NavBar(props: any) {
 
                     {lists.map((list) => {
                         return <>
-                            <li key={list.id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{list.link}</li>
+                            <li onClick={()=>setNav(!nav)} key={list.id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{list.link}</li>
                         </>
                     })}
 
@@ -74,8 +74,8 @@ function NavBar(props: any) {
                         <div className="my-4 flex justify-between items-center ">
                             <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/mohd-faisal-bidda'><BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                             <a rel='noreferrer' target='_blank' href='https://github.com/MohdFaisalBidda'><BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
-                            <a rel='noreferrer' target='_blank' href='https://twitter.com'><BsTwitter className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
-                            <a rel='noreferrer' target='_blank' href=''><BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href=''><BsFillPersonLinesFill className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href='mailto:biddafaisal@gmail.com'><BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                         </div>
                     </div>
 
