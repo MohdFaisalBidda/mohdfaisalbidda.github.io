@@ -13,7 +13,7 @@ function Contact() {
                     <div className="flex flex-col justify-center items-center">
                         <p className='text-5xl text-center mt-10 dark:text-secondary'>Get In Touch</p>
                         <p className='mt-8 text-center font-medium text-lg dark:text-gray-400'>My Inbox is always open,if you just want to say Hello👋. <br />I'll try my best to get back to you! Feel free to mail me about any job opportunity.</p>
-                        <a href='mailto:biddafaisal@gmail.com'><button className='text-center mt-16 bg-amber-300 w-28 h-10 font-bold text-amber-800 hover:scale-105 duration-200 rounded-lg dark:bg-secondary dark:text-primary'>Mail me</button></a>
+                        <a href='mailto:biddafaisal@gmail.com'><button className='text-center mt-16 border-4 border-amber-300 px-6 py-3 font-bold text-black hover:bg-amber-300 hover:text-black hover:scale-105 duration-200 rounded-lg dark:bg-primary dark:border-secondary dark:text-secondary dark:hover:text-primary dark:hover:bg-secondary'>Mail me</button></a>
                     </div>
                 </div>
             </div>
