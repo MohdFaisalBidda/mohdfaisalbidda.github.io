@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{FC} from 'react'
 import html from "../assets/html.png"
 import bootstrap from "../assets/bootstrap.png"
 import express from "../assets/express.png"
@@ -8,9 +8,10 @@ import tailwind from "../assets/tailwind.png"
 import react from "../assets/react.png"
 import mysql from "../assets/mysql.png"
 import mongodb from "../assets/mongodb.png"
+import typescript from "../assets/typescript.png"
 
 
-function Experience() {
+const Experience:FC = ()=> {
 
     const techs = [
         {
@@ -75,8 +76,16 @@ function Experience() {
             id: '9',
             src: tailwind,
             title: "Tailwind CSS",
-            style: "shadow-blue-500",
+            style: "shadow-blue-600",
             link:"https://v2.tailwindcss.com/docs"
+        }
+        ,
+        {
+            id: '9',
+            src: typescript,
+            title: "Typescript",
+            style: "shadow-blue-500",
+            link:"https://www.typescriptlang.org/"
         }
     ]
 

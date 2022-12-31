@@ -1,16 +1,22 @@
-import React from 'react'
+import React,{FC} from 'react'
+
+interface Props {
+    src:string;
+    code:string;
+    github:string;
+}
 
 
-const Card = (props: any) => {
+const Card:FC<Props> = ({src,code,github}) => {
     return (
 
         <>
             <div className=" grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 justify-center  my-10 ">
                 <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl">
-                    {/* <BsGithub className='text-8xl'/> */} <img src={props.src} className='duration-200 hover:scale-105' alt="" />
+                    {/* <BsGithub className='text-8xl'/> */} <img src={src} className='duration-200 hover:scale-105' alt="" />
                     <div className="flex items-center justify-center">
-                        <button className=' w-1/2 px-4 py-3 m-4  duration-200 hover:scale-105'>{props.code}</button>
-                        <button className=' w-1/2 px-4 py-3 m-4 duration-200 hover:scale-105'>{props.github}</button>
+                        <button className=' w-1/2 px-4 py-3 m-4  duration-200 hover:scale-105'>{code}</button>
+                        <button className=' w-1/2 px-4 py-3 m-4 duration-200 hover:scale-105'>{github}</button>
                     </div>
                 </div>
 

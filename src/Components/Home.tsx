@@ -1,8 +1,8 @@
-import React from 'react'
+import React,{FC} from 'react'
 import {AiOutlineRight} from "react-icons/ai";
 import Hero from '../assets/hero.png'
 
-function Home() {
+const  Home:FC = ()=> {
     return (
         <>
             <div className=" h-screen w-full dark:bg-primary">

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, {FC, useState, useEffect } from 'react'
 import { FaArrowUp } from 'react-icons/fa'
 
-function ScrollToTop() {
+const ScrollToTop:FC = ()=> {
   const [visible, setVisible] = useState(false);
   const listenToScroll = () => {
     let heigthToHidden = 250;

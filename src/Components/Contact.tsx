@@ -1,6 +1,6 @@
-import React from 'react'
+import React,{FC} from 'react'
 
-function Contact() {
+const Contact:FC = ()=> {
     return (
         <>
             <div className=" w-full h-full dark:bg-primary">

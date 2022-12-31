@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { BsFillPersonLinesFill, BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill, BsTwitter } from 'react-icons/bs'
+import { BsFillPersonLinesFill, BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill } from 'react-icons/bs'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { BsSun } from 'react-icons/bs'
 
-function NavBar(props: any) {
+const NavBar =(props: any)=> {
     const [nav, setNav] = useState(false);
 
 

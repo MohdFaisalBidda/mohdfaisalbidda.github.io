@@ -1,8 +1,8 @@
-import React from 'react'
-import { BsFillPersonLinesFill, BsGithub, BsMailbox, BsTwitter } from 'react-icons/bs'
+import React,{FC} from 'react'
+import { BsFillPersonLinesFill, BsGithub, BsMailbox } from 'react-icons/bs'
 import { FaLinkedin } from 'react-icons/fa'
 
-function SocialLinks() {
+const SocialLinks:FC = ()=> {
     const links = [
         {
             id: "1",
@@ -34,7 +34,7 @@ function SocialLinks() {
                 <>Mail <BsMailbox size={30} /> </>
             ),
             href: "mailto:biddafaisal@gmail.com",
-            style: 'rounded-tr-md'
+            style: 'rounded-tr-md bg-amber-400'
         }
     ]
     return (
@@ -43,7 +43,7 @@ function SocialLinks() {
                 <ul>
                     {React.Children.toArray(links.map(({ id, child, href, style }) => {
                         return <>
-                            <li key={id} className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-200 bg-amber-300 ${style}`}>
+                            <li key={id} className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-200 ${style}`}>
                                 <a rel="noreferrer" href={href} target="_blank"
                                     className='flex justify-between items-center w-full font-bold'
                                 >
