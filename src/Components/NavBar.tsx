@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BsFillPersonLinesFill, BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill } from 'react-icons/bs'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { BsSun } from 'react-icons/bs'
+// import { BsSun } from 'react-icons/bs'
 
 const NavBar =(props: any)=> {
     const [nav, setNav] = useState(false);
@@ -74,7 +74,7 @@ const NavBar =(props: any)=> {
                         <div className="my-4 flex justify-between items-center ">
                             <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/mohd-faisal-bidda'><BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                             <a rel='noreferrer' target='_blank' href='https://github.com/MohdFaisalBidda'><BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
-                            <a rel='noreferrer' target='_blank' href=''><BsFillPersonLinesFill className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href='mailto:biddafaisal@gmail.com'><BsFillPersonLinesFill className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                             <a rel='noreferrer' target='_blank' href='mailto:biddafaisal@gmail.com'><BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                         </div>
                     </div>

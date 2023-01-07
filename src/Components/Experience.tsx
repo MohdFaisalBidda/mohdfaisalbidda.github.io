@@ -103,7 +103,7 @@ const Experience:FC = ()=> {
                         React.Children.toArray(techs.map(({ id, src, title, style,link }) => {
                             return <>
                                 <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                                    <a href={link} target="_blank"><img src={src} alt="" className='w-28 mx-auto h-28' /></a>
+                                    <a href={link} target="_blank" rel="noreferrer" ><img src={src} alt="" className='w-28 mx-auto h-28' /></a>
                                     <p className='mt-4 text-lg dark:text-secondary'>{title}</p>
                                 </div>
                             </>
