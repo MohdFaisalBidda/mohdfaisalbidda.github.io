@@ -3,13 +3,15 @@ import { BsFillPersonLinesFill, BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill
 import { FaBars, FaTimes } from 'react-icons/fa'
 // import { BsSun } from 'react-icons/bs'
 
+interface List {
+    id : number,
+    link: string | any
+}
+
 const NavBar =(props: any)=> {
     const [nav, setNav] = useState(false);
 
-
-
-
-    const lists = [
+    const lists:List[] = [
         {
             id: 1,
             link: "Home",
@@ -61,7 +63,7 @@ const NavBar =(props: any)=> {
                     {nav ? <FaTimes className=' dark:text-secondary' size={25} /> : <FaBars size={25} className=' dark:text-secondary' />}
                 </div>
 
-                {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-white text-black bg-opacity-80  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
+                {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-white text-black bg-opacity-90  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
 
                     {lists.map((list) => {
                         return <>

@@ -2,8 +2,15 @@ import React,{FC} from 'react'
 import { BsFillPersonLinesFill, BsGithub, BsMailbox } from 'react-icons/bs'
 import { FaLinkedin } from 'react-icons/fa'
 
+interface SLink {
+    id : string,
+    child : React.ReactNode
+    href : string,
+    style : string
+}
+
 const SocialLinks:FC = ()=> {
-    const links = [
+    const links:SLink[] = [
         {
             id: "1",
             child: (

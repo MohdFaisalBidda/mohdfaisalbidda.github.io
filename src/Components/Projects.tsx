@@ -1,8 +1,17 @@
 import React from 'react'
 import colorApp from "../assets/project3.png"
 
+interface Project {
+    id : number,
+    src : any,
+    pName : string,
+    description : string,
+    code : string,
+    preview : string
+}
+
 const Projects = ()=> {
-    const lists = [
+    const lists:Project[] = [
         {
             id: 1,
             src: colorApp,
@@ -54,8 +63,8 @@ const Projects = ()=> {
     ]
     return (
         <>
-            <div className='w-full min-h-screen dark:bg-primary py-40'>
-                <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+            <div className='w-full min-h-screen dark:bg-primary pt-96'>
+                <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
                     <div className="pb-8">
                         <p className='text-4xl font-bold inline border-b-4 border-black dark:text-secondary dark:border-secondary'>Portfolio</p>
                         <p className='py-6 text-gray-600 dark:text-gray-400'>Here is some of my work.</p>
