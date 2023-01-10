@@ -1,5 +1,8 @@
 import React from 'react'
 import colorApp from "../assets/project3.png"
+import newsApp from "../assets/news.png"
+import gApp from "../assets/project2.png"
+
 
 interface Project {
     id : number,
@@ -23,42 +26,23 @@ const Projects = ()=> {
         },
         {
             id: 2,
-            src: "https://picsum.photos/300/300",
-            pName:"Color App",
+            src: newsApp,
+            pName:"News App",
             description:"lorem10",
-            code: "Github",
-            preview: "Preview"
+            code: "https://github.com/MohdFaisalBidda/News-App",
+            preview: "https://news-app-mohdfaisalbidda.vercel.app/"
 
         },
         {
             id: 3,
-            src: "https://picsum.photos/300/300",
-            pName:"Color App",
+            src: gApp,
+            pName:"Github Profile Viewer",
             description:"lorem10",
-            code: "Github",
-            preview: "Preview"
+            code: "https://github.com/MohdFaisalBidda/Github-Profile-Viewer",
+            preview: "https://github-profile-viewer-three.vercel.app/"
 
         }
-        ,
-        {
-            id: 4,
-            src: "https://picsum.photos/300/300",
-            pName:"Color App",
-            description:"lorem10",
-            code: "Github",
-            preview: "Preview"
-
-        }
-        ,
-        {
-            id: 5,
-            src: "https://picsum.photos/300/300",
-            pName:"Color App",
-            description:"lorem10",
-            code: "Github",
-            preview: "Preview"
-
-        }
+        
 
     ]
     return (
