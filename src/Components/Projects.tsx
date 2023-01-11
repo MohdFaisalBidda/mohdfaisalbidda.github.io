@@ -52,6 +52,16 @@ const Projects = ()=> {
             preview: "https://github-profile-viewer-three.vercel.app/"
 
         }
+        ,
+        {
+            id: 5,
+            src: gApp,
+            pName:"Github Profile Viewer",
+            description:"lorem10",
+            code: "https://github.com/MohdFaisalBidda/Github-Profile-Viewer",
+            preview: "https://github-profile-viewer-three.vercel.app/"
+
+        }
         
 
     ]
