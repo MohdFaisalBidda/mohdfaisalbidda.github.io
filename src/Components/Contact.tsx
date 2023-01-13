@@ -3,7 +3,7 @@ import React,{FC} from 'react'
 const Contact:FC = ()=> {
     return (
         <>
-            <div className=" w-full h-full dark:bg-primary">
+            <div id='contact' className=" w-full h-full dark:bg-primary">
                 <div className=" max-w-screen-lg mx-auto flex flex-col justify-center h-screen p-6">
 
                     <div className="mb-10">

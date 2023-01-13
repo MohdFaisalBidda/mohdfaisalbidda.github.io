@@ -42,32 +42,13 @@ const Projects = ()=> {
             preview: "https://github-profile-viewer-three.vercel.app/"
 
         }
-        ,
-        {
-            id: 4,
-            src: gApp,
-            pName:"Github Profile Viewer",
-            description:"lorem10",
-            code: "https://github.com/MohdFaisalBidda/Github-Profile-Viewer",
-            preview: "https://github-profile-viewer-three.vercel.app/"
-
-        }
-        ,
-        {
-            id: 5,
-            src: gApp,
-            pName:"Github Profile Viewer",
-            description:"lorem10",
-            code: "https://github.com/MohdFaisalBidda/Github-Profile-Viewer",
-            preview: "https://github-profile-viewer-three.vercel.app/"
-
-        }
+        
         
 
     ]
     return (
         <>
-            <div className='w-full min-h-screen dark:bg-primary pt-96'>
+            <div id='portfolio' className='w-full min-h-screen dark:bg-primary pt-96'>
                 <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
                     <div className="pb-8">
                         <p className='text-4xl font-bold inline border-b-4 border-black dark:text-secondary dark:border-secondary'>Portfolio</p>

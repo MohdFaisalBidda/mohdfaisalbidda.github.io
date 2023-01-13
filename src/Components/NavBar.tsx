@@ -1,43 +1,12 @@
 import React, { useState } from 'react'
 import { BsFillPersonLinesFill, BsGithub, BsLinkedin, BsMailbox, BsMoonStarsFill } from 'react-icons/bs'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { Link } from "react-scroll"
 // import { BsSun } from 'react-icons/bs'
 
-interface List {
-    id : number,
-    link: string | any
-}
 
-const NavBar =(props: any)=> {
+const NavBar = (props: any) => {
     const [nav, setNav] = useState(false);
-
-    const lists:List[] = [
-        {
-            id: 1,
-            link: "Home",
-        },
-        {
-            id: 2,
-            link: "About",
-        },
-        {
-            id: 3,
-            link: "Portfolio",
-        },
-        {
-            id: 4,
-            link: "Experience",
-        },
-        {
-            id: 5,
-            link: "Contact",
-        }
-        ,
-        {
-            id: 6,
-            link: <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />
-        }
-    ]
 
     return (
         <>
@@ -47,15 +16,17 @@ const NavBar =(props: any)=> {
                 </div>
 
                 <ul className='hidden lg:flex'>
+                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="home" smooth >Home</Link></li>
 
-                    {
-                        React.Children.toArray(lists.map((list) => {
-                            return <>
-                                <div key={list.id}>
-                                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'>{list.link}</li>
-                                </div>
-                            </>
-                        }))}
+                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="about" smooth >About</Link></li>
+
+                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="portfolio" smooth >Portfolio</Link></li>
+
+                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="experience" smooth >Experience</Link></li>
+
+                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="contact" smooth >Contact</Link></li>
+
+                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /></li>
                 </ul>
 
 
@@ -65,13 +36,15 @@ const NavBar =(props: any)=> {
 
                 {nav && <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-white text-black bg-opacity-90  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
 
-                    {lists.map((list) => {
-                        return <>
-                            <li onClick={()=>setNav(!nav)} key={list.id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'>{list.link}</li>
-                        </>
-                    })}
+                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl' onClick={() => setNav(nav)} ><Link to="home" smooth >Home</Link></li>
+                    <li onClick={() => setNav(nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="about" smooth >About</Link></li>
+                    <li onClick={() => setNav(!nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="portfolio" smooth >Portfolio</Link></li>
+                    <li onClick={() => setNav(!nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="experience" smooth >Experience</Link></li>
+                    <li onClick={() => setNav(!nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="contact" smooth >Contact</Link></li>
 
-                    <div className=' pt-10'>
+                    <li className='px-8 my-4 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-4xl dark:text-secondary'><BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /></li>
+
+                    <div className='pt-10'>
                         <p className='uppercase tracking-widest font-bold'>Let's Connect</p>
                         <div className="my-4 flex justify-between items-center ">
                             <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/mohd-faisal-bidda'><BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>

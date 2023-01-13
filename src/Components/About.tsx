@@ -4,7 +4,7 @@ const About:FC = ()=> {
   
   return (
     <>
-      <div  className="w-full h-screen dark:bg-primary pt-96">
+      <div id='about'  className="w-full h-screen dark:bg-primary pt-96">
         <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
           <div className="">
             <p className='text-4xl font-bold inline border-b-4 border-black dark:text-secondary dark:border-secondary'>About</p>

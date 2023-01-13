@@ -98,7 +98,7 @@ const Experience:FC = ()=> {
     ]
 
     return (
-        <div className=' w-full h-full dark:bg-primary pt-20'>
+        <div id='experience' className=' w-full h-full dark:bg-primary pt-20'>
             <div className=" max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
                 <div>
                     <p className='text-4xl font-bold border-b-4 inline border-black px-2 dark:text-secondary dark:border-secondary'>Experience</p>

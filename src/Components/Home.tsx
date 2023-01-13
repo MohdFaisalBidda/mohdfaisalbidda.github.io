@@ -5,7 +5,7 @@ import Hero from '../assets/hero.png'
 const  Home:FC = ()=> {
     return (
         <>
-            <div className=" h-screen w-full dark:bg-primary">
+            <div id='home' className=" h-screen w-full dark:bg-primary">
                 <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row pt-52 sm:pt-48">
                     <div className="my-8">
                         <h2 className=' text-3xl sm:text-6xl font-semibold text-black pb-5 dark:text-secondary'>I'm a Full stack Developer</h2>
