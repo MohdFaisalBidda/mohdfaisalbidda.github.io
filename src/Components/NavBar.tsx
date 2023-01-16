@@ -46,17 +46,12 @@ const NavBar = (props: any) => {
                 </motion.ul>
 
 
-                <motion.div
-                    initial={{ x: 0, opacity: 0 }}
-                    whileInView={{
-                        x: [0, 25],
-                        opacity: 1
-                    }}
-                    transition={{ duration: 1 }}
+                <div
+                 
 
                     onClick={() => setNav(!nav)} className="cursor-pointer pr-4 z-10 lg:hidden">
                     {nav ? <FaTimes className=' dark:text-secondary' size={25} /> : <FaBars size={25} className=' dark:text-secondary' />}
-                </motion.div>
+                </div>
 
                 {nav && <motion.ul
                     initial={{ x: 0, opacity: 0 }}
