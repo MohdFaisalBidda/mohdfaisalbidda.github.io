@@ -49,7 +49,7 @@ const Projects = () => {
     ]
     return (
         <>
-            <div id='portfolio' className='w-full min-h-screen dark:bg-primary pt-96'>
+            <div id='portfolio' className='w-full min-h-screen dark:bg-primary pt-96  xsm:pt-[600px]'>
                 <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
                     <motion.div
                         initial={{ x: 0, opacity: 0 }}

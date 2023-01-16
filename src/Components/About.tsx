@@ -6,8 +6,8 @@ const About: FC = () => {
 
   return (
     <>
-      <div id='about' className="w-full h-screen dark:bg-primary pt-96">
-        <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
+      <div id='about' className="w-full h-screen dark:bg-primary xsm:pt-[600px]">
+        <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center align-middle w-full h-full">
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             whileInView={{

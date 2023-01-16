@@ -11,7 +11,7 @@ const Home: FC = () => {
         <>
             <div id='home' className=" h-screen w-full dark:bg-primary ">
 
-                <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row pt-52 sm:pt-48">
+                <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row pt-52 sm:pt-48 ">
                     <motion.div
                         initial={{ x: 0, opacity: 0 }}
                         whileInView={{

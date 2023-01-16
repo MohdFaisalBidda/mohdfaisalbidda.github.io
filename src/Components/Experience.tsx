@@ -99,7 +99,7 @@ const Experience: FC = () => {
     ]
 
     return (
-        <div id='experience' className=' w-full h-full dark:bg-primary pt-20'>
+        <div id='experience' className=' w-full h-full dark:bg-primary pt-20  xsm:pt-[200px]'>
             <div className=" max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
                 <motion.div
                     initial={{ x: 0, opacity: 0 }}
