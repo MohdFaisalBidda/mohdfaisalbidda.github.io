@@ -8,6 +8,7 @@ import SocialLinks from './Components/SocialLinks';
 import Experience from './Components/Experience';
 import Contact from './Components/Contact';
 import ScrollToTop from './Components/ScrollToTop';
+import Footer from './Components/Footer';
 
 function App() {
   const [theme, setTheme] = useState("");
@@ -31,6 +32,7 @@ function App() {
         <Projects />
         <Experience/>
         <Contact/>
+        <Footer/>
       </div>
     </ThemeContext.Provider>
 

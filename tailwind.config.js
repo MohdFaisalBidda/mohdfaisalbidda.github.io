@@ -1,20 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode:"class",
+  darkMode: "class",
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    fontFamily:{
-      signature :["Great Vibes"]
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
+    fontFamily: {
+      signature: ["Great Vibes"]
     },
     extend: {
-      colors:{
-      primary:"#0a192f",
-      secondary:"#64ffdb"
+      colors: {
+        primary: "#0a192f",
+        secondary: "#64ffdb"
       },
-      
-    },  
+
+    },
   },
   plugins: [],
 }
