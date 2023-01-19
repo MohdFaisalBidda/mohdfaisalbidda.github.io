@@ -47,8 +47,6 @@ const NavBar = (props: any) => {
 
 
                 <div
-                 
-
                     onClick={() => setNav(!nav)} className="cursor-pointer pr-4 z-10 lg:hidden">
                     {nav ? <FaTimes className=' dark:text-secondary' size={25} /> : <FaBars size={25} className=' dark:text-secondary' />}
                 </div>
@@ -56,17 +54,17 @@ const NavBar = (props: any) => {
                 {nav && <motion.ul
                     initial={{ x: 0, opacity: 0 }}
                     whileInView={{
-                        y: [-250, 0],
+                        x: [-250, 0],
                         opacity: 1
                     }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.5 }}
                     className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-white text-black bg-opacity-90  dark:text-secondary transition-all duration-200 dark:bg-primary dark:bg-opacity-80'>
 
-                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl' onClick={() => setNav(nav)} ><Link to="home" smooth >Home</Link></li>
-                    <li onClick={() => setNav(nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="about" smooth >About</Link></li>
-                    <li onClick={() => setNav(!nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="portfolio" smooth >Portfolio</Link></li>
-                    <li onClick={() => setNav(!nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="experience" smooth >Experience</Link></li>
-                    <li onClick={() => setNav(!nav)} className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link to="contact" smooth >Contact</Link></li>
+                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="home" smooth >Home</Link></li>
+                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="about" smooth >About</Link></li>
+                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="portfolio" smooth >Portfolio</Link></li>
+                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="experience" smooth >Experience</Link></li>
+                    <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="contact" smooth >Contact</Link></li>
 
                     <li className='px-8 my-4 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-4xl dark:text-secondary'><BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /></li>
 
@@ -76,7 +74,7 @@ const NavBar = (props: any) => {
                             x: [-250, 0],
                             opacity: 1
                         }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 0.5 }}
                         className='pt-10'>
                         <p className='uppercase tracking-widest font-bold'>Let's Connect</p>
                         <div className="my-4 flex justify-between items-center ">
@@ -91,7 +89,7 @@ const NavBar = (props: any) => {
 
 
             </div>
-            
+
 
 
         </>

@@ -32,7 +32,7 @@ const About: FC = () => {
           <motion.p
             initial={{ x: 0, opacity: 0 }}
             whileInView={{
-              x: [125, 0],
+              x: [40, 0],
               opacity: 1
             }}
             transition={{ duration: 1 }}

@@ -34,7 +34,7 @@ const Home: FC = () => {
                     <motion.div
                         initial={{ x: 0, opacity: 0 }}
                         whileInView={{
-                            x: [125, 0],
+                            x: [80, 0],
                             opacity: 1
                         }}
                         transition={{ duration: 1 }}

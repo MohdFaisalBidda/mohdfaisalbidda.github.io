@@ -2,6 +2,8 @@ import React from 'react'
 import colorApp from "../assets/project3.png"
 import newsApp from "../assets/news.png"
 import gApp from "../assets/project2.png"
+import NoteKepper from "../assets/NoteKepper.png"
+import Majesty from "../assets/Majesty.png"
 import { motion } from "framer-motion"
 
 
@@ -18,31 +20,49 @@ const Projects = () => {
     const lists: Project[] = [
         {
             id: 1,
-            src: colorApp,
-            pName: "Color App",
-            description: "lorem10",
-            code: "https://github.com/MohdFaisalBidda/Color_Picker",
-            preview: "https://color-picker-snowy.vercel.app/",
+            src: NoteKepper,
+            pName: "Note Keeper",
+            description: "Full stack application where Front-end is built using ReactJS and Back-end using NodeJS, ExpressJS, MongoDB",
+            code: "https://github.com/MohdFaisalBidda/Note-Keeper-frontend",
+            preview: "https://note-keeper-frontend-eight.vercel.app/"
 
         },
         {
             id: 2,
+            src: Majesty,
+            pName: "Majesty",
+            description: "Majesty - A search engine designed by me.",
+            code: "https://github.com/MohdFaisalBidda/Majesty",
+            preview: "https://majesty-pi.vercel.app/"
+
+        },
+        {
+            id: 3,
             src: newsApp,
             pName: "News App",
-            description: "lorem10",
+            description: "News Application to stay updated with Top headlines of the world.",
             code: "https://github.com/MohdFaisalBidda/News-App",
             preview: "https://news-app-mohdfaisalbidda.vercel.app/"
 
         },
         {
-            id: 3,
+            id: 4,
+            src: colorApp,
+            pName: "Color App",
+            description: "Color picker application built using react to choose varients of color of different shades.",
+            code: "https://github.com/MohdFaisalBidda/Color_Picker",
+            preview: "https://color-picker-snowy.vercel.app/",
+
+        },
+        {
+            id: 5,
             src: gApp,
             pName: "Github Profile Viewer",
-            description: "lorem10",
+            description: "Github profile finder/viewer built using react and github-api",
             code: "https://github.com/MohdFaisalBidda/Github-Profile-Viewer",
             preview: "https://github-profile-viewer-three.vercel.app/"
 
-        }
+        },
 
 
 
@@ -69,7 +89,7 @@ const Projects = () => {
                                 <motion.div
                                     initial={{ x: 0, opacity: 0 }}
                                     whileInView={{
-                                        x: [125, 0],
+                                        x: [-250, 0],
                                         opacity: 1.2
                                     }}
                                     transition={{ duration: 1 }}
