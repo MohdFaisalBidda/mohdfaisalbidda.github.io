@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2d4f854b.css",
-    "main.js": "/static/js/main.d69f3132.js",
+    "main.css": "/static/css/main.706877fb.css",
+    "main.js": "/static/js/main.a56c2566.js",
     "static/js/787.21d17fcb.chunk.js": "/static/js/787.21d17fcb.chunk.js",
     "static/media/bootstrap.png": "/static/media/bootstrap.c07a78116a3301b4ff61.png",
     "static/media/news.png": "/static/media/news.b00aa5a16b2a1c864ce2.png",
@@ -14,16 +14,18 @@
     "static/media/node.png": "/static/media/node.caaf4a7ef98afc9a906a.png",
     "static/media/mongodb.png": "/static/media/mongodb.f1d54d865bb9ed4fc101.png",
     "static/media/tailwind.png": "/static/media/tailwind.1ea9c236a5606088f182.png",
+    "static/media/NoteKepper.png": "/static/media/NoteKepper.08187f7810232f010c92.png",
     "static/media/project2.png": "/static/media/project2.0cc3404c57a89bf99bd0.png",
+    "static/media/Majesty.png": "/static/media/Majesty.0b9569731dcfd91ac2d5.png",
     "static/media/project3.png": "/static/media/project3.74687b2407dc2881c8e7.png",
     "static/media/typescript.png": "/static/media/typescript.bb13ebd9561a6ee645c2.png",
     "index.html": "/index.html",
-    "main.2d4f854b.css.map": "/static/css/main.2d4f854b.css.map",
-    "main.d69f3132.js.map": "/static/js/main.d69f3132.js.map",
+    "main.706877fb.css.map": "/static/css/main.706877fb.css.map",
+    "main.a56c2566.js.map": "/static/js/main.a56c2566.js.map",
     "787.21d17fcb.chunk.js.map": "/static/js/787.21d17fcb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d4f854b.css",
-    "static/js/main.d69f3132.js"
+    "static/css/main.706877fb.css",
+    "static/js/main.a56c2566.js"
   ]
 }
