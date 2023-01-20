@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link } from "react-scroll"
 import { motion } from 'framer-motion';
 
-// import { BsSun } from 'react-icons/bs'
+import { BsSun } from 'react-icons/bs'
 
 
 const NavBar = (props: any) => {
@@ -42,7 +42,7 @@ const NavBar = (props: any) => {
 
                     <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="contact" smooth >Contact</Link></li>
 
-                    <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /></li>
+                    <li className='px-8 my-2 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'>{props.theme ==="light" ? <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />:<BsSun onClick={props.handleTheme} />}</li>
                 </motion.ul>
 
 
@@ -66,7 +66,7 @@ const NavBar = (props: any) => {
                     <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="experience" smooth >Experience</Link></li>
                     <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="contact" smooth >Contact</Link></li>
 
-                    <li className='px-8 my-4 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-4xl dark:text-secondary'><BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /></li>
+                    <li className='px-8 my-4 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-4xl dark:text-secondary'>{props.theme ==="light"?<BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />:<BsSun onClick={props.handleTheme} />}</li>
 
                     <motion.div
                         initial={{ x: 0, opacity: 0 }}
