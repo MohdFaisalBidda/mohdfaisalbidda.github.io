@@ -11,7 +11,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import Footer from './Components/Footer';
 
 function App() {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState("light");
 
   const ThemeContext: any = createContext("");
 
