@@ -7,17 +7,6 @@ import Typewriter from 'typewriter-effect';
 
 const Home: FC = () => {
 
-    const moveVarient = {
-        animation: {
-            y: [0, -15],
-            transition: {
-                yoyo: Infinity,
-                duration: 2,
-                delay: 1,
-            },
-        }
-    }
-
     return (
         <>
             <div id='home' className=" h-screen w-full dark:bg-primary ">
