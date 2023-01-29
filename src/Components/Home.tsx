@@ -3,9 +3,20 @@ import { AiOutlineRight } from "react-icons/ai";
 import Hero from '../assets/hero.png'
 import { Link } from "react-scroll"
 import { motion } from 'framer-motion';
-
+import Typewriter from 'typewriter-effect';
 
 const Home: FC = () => {
+
+    const moveVarient = {
+        animation: {
+            y: [0, -15],
+            transition: {
+                yoyo: Infinity,
+                duration: 2,
+                delay: 1,
+            },
+        }
+    }
 
     return (
         <>
@@ -20,9 +31,21 @@ const Home: FC = () => {
                         }}
                         transition={{ duration: 1 }}
                         className="my-8">
-                        <h2 className=' text-3xl sm:text-4xl font-semibold text-black pb-5 dark:text-secondary '>I'm a React Developer</h2>
+
+                        <div className="flex space-x-2">
+                            <h2 className='text-3xl sm:text-4xl font-semibold text-black pb-5 dark:text-secondary'>I'm a </h2>
+                            <div className="text-3xl sm:text-4xl font-semibold text-black pb-5 dark:text-secondary">
+                                <Typewriter
+                                    options={{
+                                        strings: ['Web Developer', 'MERN Developer'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </div>
+                        </div>
                         <p className=' text-gray-600 text-md py-4 max-w-md dark:text-gray-400'>As a React-based developer, I specialize in building and maintaining high-performance, user-friendly web applications using the React JavaScript library. I am skilled in creating responsive UI components, implementing animations and user interactions, and optimizing the overall performance of the application.</p>
-                        <div className="">
+                        <div className="flex items-center space-x-5">
                             <button className='group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md border-2 border-amber-300 hover:bg-amber-300  hover:border-white font-semibold border-solid hover:scale-105 duration-200 dark:border-2 dark:border-secondary dark:hover:bg-secondary dark:hover:text-primary dark:text-secondary '><Link to="portfolio" smooth >Portfolio</Link>
                                 <span className='group-hover:rotate-90'>
                                     <AiOutlineRight size={20} />
