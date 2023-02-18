@@ -12,14 +12,11 @@ const NavBar = (props: any) => {
 
     return (
         <>
-            <div className='py-7 xl:py-10 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] z-[999] fixed bg-white shadow-lg '>
+            <div className='py-5 xl:py-8 px-10 flex justify-between items-center text-center w-full dark:bg-primary dark:shadow-xl dark:z-[999] z-[999] fixed bg-white shadow-lg '>
                 <motion.div
                     initial={{ x: 0, opacity: 0 }}
-                    whileInView={{
-                        x: [250, 0],
-                        opacity: 1
-                    }}
-                    transition={{ duration: 1 }}
+                    whileInView={{ opacity: 80 }}
+                    transition={{ duration: 1.2 }}
                     className="">
                     <h1 className='font-bold text-black text-5xl font-signature dark:text-secondary'>Faisal</h1>
                 </motion.div>
@@ -42,7 +39,7 @@ const NavBar = (props: any) => {
 
                     <li className='px-8 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'><Link to="contact" smooth >Contact</Link></li>
 
-                    <li className='px-8 my-2 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'>{props.theme ==="light" ? <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />:<BsSun onClick={props.handleTheme} />}</li>
+                    <li className='px-8 my-2 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-2xl dark:text-secondary'>{props.theme === "light" ? <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /> : <BsSun onClick={props.handleTheme} />}</li>
                 </motion.ul>
 
 
@@ -66,7 +63,7 @@ const NavBar = (props: any) => {
                     <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="experience" smooth >Experience</Link></li>
                     <li className='px-4 cursor-pointer capitalize font-medium  hover:scale-105 duration-200 py-6 text-4xl'><Link onClick={() => setNav(!nav)} to="contact" smooth >Contact</Link></li>
 
-                    <li className='px-8 my-4 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-4xl dark:text-secondary'>{props.theme ==="light"?<BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} />:<BsSun onClick={props.handleTheme} />}</li>
+                    <li className='px-8 my-4 cursor-pointer capitalize font-thin text-black hover:scale-105 duration-200 text-4xl dark:text-secondary'>{props.theme === "light" ? <BsMoonStarsFill className='text-black dark:text-secondary' onClick={props.handleTheme} /> : <BsSun onClick={props.handleTheme} />}</li>
 
                     <motion.div
                         initial={{ x: 0, opacity: 0 }}
@@ -80,7 +77,7 @@ const NavBar = (props: any) => {
                         <div className="my-4 flex justify-between items-center ">
                             <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/mohd-faisal-bidda'><BsLinkedin className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                             <a rel='noreferrer' target='_blank' href='https://github.com/MohdFaisalBidda'><BsGithub className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
-                            <a rel='noreferrer' target='_blank' href='mailto:biddafaisal@gmail.com'><BsFillPersonLinesFill className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
+                            <a rel='noreferrer' target='_blank' href='/Resume.pdf'><BsFillPersonLinesFill className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                             <a rel='noreferrer' target='_blank' href='mailto:biddafaisal@gmail.com'><BsMailbox className='mx-4 cursor-pointer hover:scale-105 duration-200' size={50} /></a>
                         </div>
                     </motion.div>

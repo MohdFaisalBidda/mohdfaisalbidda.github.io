@@ -87,12 +87,9 @@ const Projects = () => {
                         {React.Children.toArray(lists.map(({ src, pName, description, code, preview }, index) => {
                             return <>
                                 <motion.div
-                                    initial={{ x: 0, opacity: 0 }}
-                                    whileInView={{
-                                        x: [-250, 0],
-                                        opacity: 1.2
-                                    }}
-                                    transition={{ duration: 1 }}
+                                   initial={{ x: 0, opacity: 0 }}
+                                   whileInView={{ opacity: 80 }}
+                                   transition={{ duration: 1.5 }}
                                     key={index} className="relative flex items-center justify-center w-full h-64 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl p-2 hover:bg-gradient-to-r from-gray-200 to-gray-300 dark:shadow-secondary dark:shadow-mditems-center dark:bg-gradient-to-r dark:from-primary group">
                                     {/* <BsGithub className='text-8xl'/> */} <img src={src} className=' rounded-xl group-hover:opacity-10 w-full h-full' alt="" />
                                     <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center">

@@ -104,7 +104,7 @@ const Experience: FC = () => {
                 <motion.div
                     initial={{ x: 0, opacity: 0 }}
                     whileInView={{
-                        x: [125, 0],
+                        x: [-250, 0],
                         opacity: 1
                     }}
                     transition={{ duration: 1 }}
@@ -120,11 +120,8 @@ const Experience: FC = () => {
                             return <>
                                 <motion.div
                                     initial={{ x: 0, opacity: 0 }}
-                                    whileInView={{
-                                        x: [-250, 0],
-                                        opacity: 1
-                                    }}
-                                    transition={{ duration: 1.2 }}
+                                    whileInView={{ opacity: 80 }}
+                                    transition={{ duration: 1.5 }}
                                     key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
                                     <a href={link} target="_blank" rel="noreferrer" ><img src={src} alt="" className='w-28 mx-auto h-28' /></a>
                                     <p className='mt-4 text-lg dark:text-secondary'>{title}</p>

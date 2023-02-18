@@ -26,8 +26,8 @@ const ScrollToTop:FC = ()=> {
   return (
     <>
       {visible &&
-        <div className="flex justify-end max-lg:hidden">
-          <div className='opacity-60 hover:bg-black text-4xl w-16 h-16 fixed bg-black text-white dark:bg-secondary dark:text-primary flex justify-center items-center rounded-full cursor-pointer right-8 bottom-6 overflow-y-hidden' onClick={gotoBtn}><FaArrowUp className='animate-bounce' /></div>
+        <div className="flex justify-end">
+          <div className='opacity-60 hover:bg-black md:text-4xl text-xl md:w-16 md:h-16 h-10 w-10 fixed bg-black text-white dark:bg-secondary dark:text-primary flex justify-center items-center rounded-full cursor-pointer right-8 bottom-6 overflow-y-hidden z-10' onClick={gotoBtn}><FaArrowUp className='animate-bounce' /></div>
         </div>
       }
     </>

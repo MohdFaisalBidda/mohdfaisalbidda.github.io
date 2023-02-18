@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsGithub, BsMailbox, BsTwitter } from 'react-icons/bs'
+import { BsFillPersonLinesFill, BsGithub, BsTwitter } from 'react-icons/bs'
 import { FaLinkedin } from 'react-icons/fa'
 
 interface SLink {
@@ -38,9 +38,9 @@ const Footer = () => {
         {
             id: "4",
             child: (
-                <> <BsMailbox size={30} /> </>
+                <> <BsFillPersonLinesFill size={30} /> </>
             ),
-            href: "mailto:biddafaisal@gmail.com",
+            href: "/Resume.pdf",
             style: 'text-amber-600'
         }
     ]

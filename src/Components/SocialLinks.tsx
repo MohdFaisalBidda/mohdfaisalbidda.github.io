@@ -32,7 +32,7 @@ const SocialLinks:FC = ()=> {
             child: (
                 <>Resume <BsFillPersonLinesFill size={30} className="text-blue-800 " /> </>
             ),
-            href: "",
+            href: "/Resume.pdf",
             style: 'rounded-tr-md bg-white'
         },
         {

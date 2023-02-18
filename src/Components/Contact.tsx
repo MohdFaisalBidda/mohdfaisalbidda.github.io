@@ -10,7 +10,7 @@ const Contact: FC = () => {
                     <motion.div
                         initial={{ x: 0, opacity: 0 }}
                         whileInView={{
-                            x: [250, 0],
+                            x: [-250, 0],
                             opacity: 1
                         }}
                         transition={{ duration: 1 }}
@@ -19,13 +19,10 @@ const Contact: FC = () => {
                         <p className='py-6 text-gray-600 dark:text-gray-400'>Drop a mail</p>
                     </motion.div>
                     <motion.div
-                    initial={{ x: 0, opacity: 0 }}
-                    whileInView={{
-                        x: [-250, 0],
-                        opacity: 1
-                    }}
-                    transition={{ duration: 1 }}
-                     className="flex flex-col justify-center items-center">
+                        initial={{ x: 0, opacity: 0 }}
+                        whileInView={{ opacity: 80 }}
+                        transition={{ duration: 1.5 }}
+                        className="flex flex-col justify-center items-center">
                         <p className='text-5xl text-center mt-10 dark:text-secondary'>Get In Touch</p>
                         <p className='mt-8 text-center font-medium text-lg dark:text-gray-400'>My Inbox is always open,if you just want to say Hello👋. <br />I'll try my best to get back to you! Feel free to mail me about any job opportunity.</p>
                         <a href='mailto:biddafaisal@gmail.com'><button className='text-center mt-16 border-4 border-amber-300 px-6 py-3 font-bold text-black hover:bg-amber-300 hover:text-black hover:scale-105 duration-200 rounded-lg dark:bg-primary dark:border-secondary dark:text-secondary dark:hover:text-primary dark:hover:bg-secondary'>Mail me</button></a>
