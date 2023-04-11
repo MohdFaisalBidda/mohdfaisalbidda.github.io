@@ -4,6 +4,8 @@ import newsApp from "../assets/news.png"
 import gApp from "../assets/project2.png"
 import NoteKepper from "../assets/NoteKepper.png"
 import Majesty from "../assets/Majesty.png"
+import EcommerceStore from "../assets/project1.png"
+import Adsy from "../assets/adsy.png"
 import { motion } from "framer-motion"
 
 
@@ -20,6 +22,24 @@ const Projects = () => {
     const lists: Project[] = [
         {
             id: 1,
+            src: EcommerceStore,
+            pName: "Ecommerce Store",
+            description: "Full stack Ecommerce store where Front-end is built using ReactJS and Back-end using NodeJS, ExpressJS, MongoDB and Redux for state management",
+            code: "https://github.com/MohdFaisalBidda/E-commerce-website",
+            preview: "https://e-commerce-website1-0.vercel.app/"
+
+        },
+        {
+            id: 2,
+            src: Adsy,
+            pName: "Adsy Clone",
+            description: "Clone of website named \"Adsy\" which is guest posting service website built with using Nextjs, sanity.io, and TailwindCSS",
+            code: "https://github.com/MohdFaisalBidda/Adsy-Clone",
+            preview: "https://adsy-clone.vercel.app/"
+
+        },
+        {
+            id: 3,
             src: NoteKepper,
             pName: "Note Keeper",
             description: "Full stack application where Front-end is built using ReactJS and Back-end using NodeJS, ExpressJS, MongoDB",
@@ -87,9 +107,9 @@ const Projects = () => {
                         {React.Children.toArray(lists.map(({ src, pName, description, code, preview }, index) => {
                             return <>
                                 <motion.div
-                                   initial={{ x: 0, opacity: 0 }}
-                                   whileInView={{ opacity: 80 }}
-                                   transition={{ duration: 1.5 }}
+                                    initial={{ x: 0, opacity: 0 }}
+                                    whileInView={{ opacity: 80 }}
+                                    transition={{ duration: 1.5 }}
                                     key={index} className="relative flex items-center justify-center w-full h-64 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl p-2 hover:bg-gradient-to-r from-gray-200 to-gray-300 dark:shadow-secondary dark:shadow-mditems-center dark:bg-gradient-to-r dark:from-primary group">
                                     {/* <BsGithub className='text-8xl'/> */} <img src={src} className=' rounded-xl group-hover:opacity-10 w-full h-full' alt="" />
                                     <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center">

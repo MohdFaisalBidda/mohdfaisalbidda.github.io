@@ -24,7 +24,7 @@ const About: FC = () => {
             whileInView={{ opacity: 80 }}
             transition={{ duration: 1.3 }}
             className='xl:text-2xl text-xl mt-20 dark:text-gray-400'>Welcome to my personal portfolio website! My name is <b >Faisal</b> and I am a passionate web developer. I specialize in creating custom websites using the latest technologies and best practices to ensure that my clients' online presence is both professional and effective.
-            My skillset includes expertise in <b>HTML, CSS, JavaScript, and PHP</b>, as well as experience with popular web development<b> frameworks such as React</b>. I am also well-versed in web design principles and know how to create visually appealing and user-friendly websites.</motion.p>
+            My skillset includes expertise in <b>HTML, CSS, TailwindCSS, MongoDB, ExpressJS, Nodejs, JavaScript and ReactJS</b>, as well as experience with popular <b></b> framework of ReactJS i.e <b> NextJs</b>. I am also well-versed in web design principles and know how to create visually appealing and user-friendly websites.</motion.p>
           <br />
           <motion.p
             initial={{ x: 0, opacity: 0 }}
