@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 .App {
   text-align: center;
 }
@@ -28,6 +28,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.card-3d {
+  transform: rotateY(-45deg) translateZ(0) scale(1);
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Handle Backface Visibility */
+.card-3d .backface-hidden {
+  backface-visibility: hidden;
 }
 
 @keyframes App-logo-spin {

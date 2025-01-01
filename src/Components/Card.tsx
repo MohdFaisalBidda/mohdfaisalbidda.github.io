@@ -1,38 +1,65 @@
-import React,{FC} from 'react'
+import React from "react";
 
-interface Props {
-    src:string;
-    code:string;
-    github:string;
-}
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+export const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className = "", ...props }, ref) => (
+    <div
+      ref={ref}
+      className={`rounded-xl border bg-card text-card-foreground shadow ${className}`}
+      {...props}
+    />
+  )
+);
+Card.displayName = "Card";
 
-const Card:FC<Props> = ({src,code,github}) => {
-    return (
+export const CardHeader = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className = "", ...props }, ref) => (
+    <div
+      ref={ref}
+      className={`flex flex-col space-y-1.5 p-6 ${className}`}
+      {...props}
+    />
+  )
+);
+CardHeader.displayName = "CardHeader";
 
-        <>
-            <div className=" grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 justify-center  my-10 ">
-                <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl">
-                    {/* <BsGithub className='text-8xl'/> */} <img src={src} className='duration-200 hover:scale-105' alt="" />
-                    <div className="flex items-center justify-center">
-                        <button className=' w-1/2 px-4 py-3 m-4  duration-200 hover:scale-105'>{code}</button>
-                        <button className=' w-1/2 px-4 py-3 m-4 duration-200 hover:scale-105'>{github}</button>
-                    </div>
-                </div>
+export const CardTitle = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className = "", ...props }, ref) => (
+    <div
+      ref={ref}
+      className={`font-semibold leading-none tracking-tight ${className}`}
+      {...props}
+    />
+  )
+);
+CardTitle.displayName = "CardTitle";
 
-            </div>
-            {/* <div className="text-center  py-20 rounded-xl my-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-                <div className="flex justify-center">
-                <BsGithub className='text-8xl'/>
-                </div>
-                <h3 className='text-lg font-medium pt-8 pb-2'>{props.title}</h3>
-                <p className='py-1'>{props.desc}</p>
-                <h4 className='py-4 text-amber-500 text-xl'>{props.head}</h4>
-                <p className='py-1 text-gray-800 font-serif'>{props.para}</p>
-                <p className=' text-gray-800 font-serif'>{props.para1}</p>
-            </div> */}
-        </>
-    )
-}
+export const CardDescription = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className = "", ...props }, ref) => (
+    <div
+      ref={ref}
+      className={`text-sm text-muted-foreground ${className}`}
+      {...props}
+    />
+  )
+);
+CardDescription.displayName = "CardDescription";
 
-export default Card
+export const CardContent = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className = "", ...props }, ref) => (
+    <div ref={ref} className={`p-6 pt-0 ${className}`} {...props} />
+  )
+);
+CardContent.displayName = "CardContent";
+
+export const CardFooter = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className = "", ...props }, ref) => (
+    <div
+      ref={ref}
+      className={`flex items-center p-6 pt-0 ${className}`}
+      {...props}
+    />
+  )
+);
+CardFooter.displayName = "CardFooter";

@@ -1,101 +1,179 @@
-import React, { FC, useCallback } from "react";
+import React, { useContext } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import Hero from "../assets/hero.png";
-import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
-import particlesConfig from "../particlesConfig.json";
-import Particles from "react-particles";
-import { loadSlim } from "tsparticles-slim";
+import { TabContext } from "../providers/TabProvider";
+import { Coffee, Github, X } from "lucide-react";
+import {
+  BsFile,
+  BsFillPersonLinesFill,
+  BsFolder,
+  BsGithub,
+  BsLinkedin,
+  BsTwitter,
+} from "react-icons/bs";
+import { Button } from "./Button";
+import { Badge } from "./Badge";
 
 const Home = () => {
-  const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container) => {
-    console.log(container);
-  }, []);
+  const floatingAnimation = {
+    animate: {
+      y: [0, 10, 0],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
-    <>
-      <div id="home" className=" h-screen w-full dark:bg-primary ">
-        <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row md:gap-x-28 pt-52 sm:pt-48 ">
-          <Particles
-            className="absolute h-full w-full opacity-90 z-0"
-            id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
-            options={particlesConfig as any}
-          />
+    <div className="container mx-auto px-4 pt-20 pb-28">
+      <div className="space-y-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col lg:flex-row items-center gap-12"
+        >
+          {/* Profile Image with Enhanced Background */}
           <motion.div
-            initial={{ x: 0, opacity: 0 }}
-            whileInView={{
-              x: [-250, 0],
-              opacity: 1,
-            }}
-            transition={{ duration: 1 }}
-            className="my-8"
+            className="relative"
+            variants={floatingAnimation}
+            animate="animate"
           >
-            <div className="flex space-x-2">
-              <h2 className="text-3xl sm:text-4xl font-semibold text-black pb-5 dark:text-secondary">
-                I'm a{" "}
-              </h2>
-              <div className="text-3xl sm:text-4xl font-semibold text-black pb-5 dark:text-secondary">
-                <Typewriter
-                  options={{
-                    strings: ["Full Stack Dev", "Frontend Dev", "Backend Dev"],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </div>
-            </div>
-            <p className=" text-gray-600 text-md text-justify py-4 max-w-md dark:text-gray-400">
-              Full Stack Dev, I specialize in building and maintaining
-              high-performance, user-friendly web applications using the
-              Javascript. I am skilled in creating responsive UI components,
-              implementing animations and user interactions, building end-to-end
-              application and optimizing the overall performance of the
-              application.
-            </p>
-            <div className="flex items-center space-x-5">
-              <button className="group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md border-2 border-amber-300 hover:bg-amber-300  hover:border-white font-semibold border-solid hover:scale-105 duration-300 dark:border-2 dark:border-secondary dark:hover:bg-secondary dark:hover:text-primary dark:text-secondary ">
-                <Link to="portfolio" smooth>
-                  Portfolio
-                </Link>
-                <span className="group-hover:rotate-90">
-                  <AiOutlineRight size={20} />
-                </span>
-              </button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ x: 0, opacity: 0 }}
-            whileInView={{
-              x: [80, 0],
-              opacity: 1,
-            }}
-            transition={{ duration: 1 }}
-            className="rounded-xl mx-auto w-1/2 lg:ml-20 2xl:w-2/5 lg:w-1/3 md:w-1/3 "
-          >
-            <a
-              href="https://github.com/MohdFaisalBidda"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-yellow-300 rounded-full blur-2xl opacity-50" />
+            <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 dark:border-gray-700 border-white/50 shadow-xl">
               <img
                 src={Hero}
-                alt=""
-                className="rounded-2xl mx-auto w-full md:w-full dark:grayscale duration-200 dark:hover:grayscale-0 dark:hover:scale-105 dark:duration-200"
+                alt="Profile"
+                className="w-full h-full object-cover"
               />
-            </a>
+            </div>
+            <motion.div
+              className="absolute inset-0 rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <div className="w-4 h-4 dark:bg-blue-500 bg-yellow-400 rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2" />
+            </motion.div>
           </motion.div>
-        </div>
+
+          {/* Text Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <Badge variant="secondary" className="mb-4">
+                Open to Contribute
+              </Badge>
+              <h1 className="text-4xl lg:text-6xl font-bold mb-4 dark:text-gray-100 text-gray-900">
+                Full Stack Developer
+              </h1>
+              <p className="text-lg mb-6 dark:text-gray-300 text-gray-600">
+                Transforming ideas into elegant digital solutions
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                {[
+                  "React",
+                  "Next.js",
+                  "Node.js",
+                  "TypeScript",
+                  "Tailwind CSS",
+                ].map((tech) => (
+                  <Badge
+                    key={tech}
+                    variant="outline"
+                    className="text-sm dark:text-gray-300"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+              <div className="flex gap-4 justify-center lg:justify-start pl-2">
+                <Button size="icon" variant="ghost">
+                  <BsGithub className="w-5 h-5 dark:text-gray-300" />
+                </Button>
+                <Button size="icon" variant="ghost">
+                  <BsTwitter className="w-5 h-5 dark:text-gray-300" />
+                </Button>
+                <Button size="icon" variant="ghost">
+                  <BsLinkedin className="w-5 h-5 dark:text-gray-300" />
+                </Button>
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://drive.google.com/file/d/1KpHMfZpEdtyBO0FIlfXRLMkSTFrsA23t/view?usp=drivesdk"
+                    )
+                  }
+                  size="icon"
+                  variant="ghost"
+                >
+                  <BsFillPersonLinesFill className="w-5 h-5 dark:text-gray-300" />
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Enhanced About Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-3xl font-bold mb-12 text-center dark:text-gray-100 text-gray-900">
+            About Me
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Freelancer",
+                description:
+                  "Passionate about creating clean, efficient, and scalable solutions that solve real-world problems.",
+                Icon: Github,
+              },
+              {
+                title: "Problem Solver",
+                description:
+                  "Analytical thinker with a knack for finding innovative solutions to complex technical challenges.",
+                Icon: Coffee,
+              },
+              {
+                title: "Continuous Learner",
+                description:
+                  "Always exploring new technologies and methodologies to stay at the forefront of web development.",
+                Icon: X,
+              },
+            ].map(({ title, description, Icon }, idx) => (
+              <motion.div
+                key={idx}
+                variants={floatingAnimation}
+                animate="animate"
+                className="p-6 rounded-xl dark:bg-gray-800/30 bg-white/30 backdrop-blur-sm"
+              >
+                <div className="mb-4 flex justify-center">
+                  <Icon className="w-8 h-8 dark:text-blue-400 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center dark:text-gray-100 text-gray-900">
+                  {title}
+                </h3>
+                <p className="text-center dark:text-gray-300 text-gray-600">
+                  {description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

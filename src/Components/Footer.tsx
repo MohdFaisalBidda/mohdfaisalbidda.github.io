@@ -40,7 +40,7 @@ const Footer = () => {
             child: (
                 <> <BsFillPersonLinesFill size={30} /> </>
             ),
-            href: "/Resume.pdf",
+            href: "https://drive.google.com/file/d/1KpHMfZpEdtyBO0FIlfXRLMkSTFrsA23t/view?usp=drivesdk",
             style: 'text-amber-600'
         }
     ]

@@ -1,36 +1,117 @@
-import React, { FC } from 'react'
-import { motion } from "framer-motion"
+import React, { FC } from "react";
+import { motion } from "framer-motion";
+import { Card } from "./Card";
+import { Button } from "./Button";
 
 const Contact: FC = () => {
-    return (
-        <>
-            <div id='contact' className=" w-full h-full dark:bg-primary">
-                <div className=" max-w-screen-lg mx-auto flex flex-col justify-center h-screen p-6">
-
-                    <motion.div
-                        initial={{ x: 0, opacity: 0 }}
-                        whileInView={{
-                            x: [-250, 0],
-                            opacity: 1
-                        }}
-                        transition={{ duration: 1 }}
-                        className="mb-10">
-                        <p className='text-4xl border-b-4 inline border-black dark:text-secondary dark:border-secondary'>Contact</p>
-                        <p className='py-6 text-gray-600 dark:text-gray-400'>Drop a mail</p>
-                    </motion.div>
-                    <motion.div
-                        initial={{ x: 0, opacity: 0 }}
-                        whileInView={{ opacity: 80 }}
-                        transition={{ duration: 1.5 }}
-                        className="flex flex-col justify-center items-center">
-                        <p className='text-5xl text-center mt-10 dark:text-secondary'>Get In Touch</p>
-                        <p className='mt-8 text-center font-medium text-lg dark:text-gray-400'>My Inbox is always open,if you just want to say Hello👋. <br />I'll try my best to get back to you! Feel free to mail me about any job opportunity.</p>
-                        <a href='mailto:biddafaisal@gmail.com'><button className='text-center mt-16 border-4 border-amber-300 px-6 py-3 font-bold text-black hover:bg-amber-300 hover:text-black hover:scale-105 duration-200 rounded-lg dark:bg-primary dark:border-secondary dark:text-secondary dark:hover:text-primary dark:hover:bg-secondary'>Mail me</button></a>
-                    </motion.div>
-                </div>
+  return (
+    <div className="container mx-auto px-4 pt-20">
+      {/* About Section */}
+      <main className="container mx-auto px-4 pt-20 pb-28">
+        <div className="max-w-4xl mx-auto">
+          {/* About Section */}
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative mb-32"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="absolute -left-4 top-0 w-1 h-32 bg-amber-500 dark:bg-secondary"
+            />
+            <div className="ml-8">
+              <motion.h2
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="text-5xl font-bold mb-8 text-amber-500 dark:text-secondary"
+              >
+                About Me
+              </motion.h2>
+              <div className="space-y-6 text-lg relative text-gray-600 dark:text-gray-300">
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="relative z-10"
+                >
+                  I'm Faisal, a Full Stack Dev passionate about creating
+                  scalable, user-friendly web and mobile applications. With
+                  expertise in ReactJS, Next.js, TypeScript, and Three.js, I've
+                  contributed to projects ranging from B2C platforms like a
+                  GoDaddy-style hosting solution to B2B 3D model configurators.
+                </motion.p>
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                  className="relative z-10"
+                >
+                  My experience spans UI/UX design, full-stack development, and
+                  real-time functionalities, delivering tailored solutions for
+                  diverse client needs.
+                </motion.p>
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl bg-cyan-950/30 dark:bg-cyan-950/30" />
+              </div>
             </div>
-        </>
-    )
-}
+          </motion.section>
 
-export default Contact
+          {/* Contact Section */}
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="absolute -right-4 top-0 w-1 h-32 bg-amber-500 dark:bg-secondary"
+            />
+            <div className="mr-8 text-right">
+              <motion.h2
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="text-5xl font-bold mb-8 text-amber-500 dark:text-secondary"
+              >
+                Get In Touch
+              </motion.h2>
+              <div className="space-y-4 relative text-gray-600 dark:text-gray-300">
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  className="text-lg relative z-10"
+                >
+                  My inbox is always open, if you just want to say Hello👋
+                </motion.p>
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
+                  className="text-lg relative z-10"
+                >
+                  I'll try my best to get back to you! Feel free to mail me
+                  about any job opportunity.
+                </motion.p>
+
+                <a href="mailto:biddafaisal@gmail.com">
+                  <button className="text-center mt-16 border-4 border-amber-300 px-6 py-3 font-bold text-black hover:bg-amber-300 hover:text-black hover:scale-105 duration-200 rounded-lg dark:bg-primary dark:border-secondary dark:text-secondary dark:hover:text-primary dark:hover:bg-secondary">
+                    Mail me
+                  </button>
+                </a>
+              </div>
+            </div>
+          </motion.section>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Contact;

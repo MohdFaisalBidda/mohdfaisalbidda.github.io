@@ -1,41 +1,22 @@
-import React, { createContext,useState } from 'react';
-import './App.css';
-import NavBar from './Components/NavBar';
-import About from './Components/About';
-import Projects from './Components/Projects';
-import Home from './Components/Home';
-import SocialLinks from './Components/SocialLinks';
-import Experience from './Components/Experience';
-import Contact from './Components/Contact';
-import ScrollToTop from './Components/ScrollToTop';
-import Footer from './Components/Footer';
+import "./App.css";
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import { TabContext, TabProvider, useTab } from "./providers/TabProvider";
+import {
+  ThemeContext,
+  ThemeProvider,
+  useTheme,
+} from "./providers/ThemeProvider";
+import Layout from "./Components/Layout";
+// import Experience from "./Components/Experience";
 
 function App() {
-  const [theme, setTheme] = useState("light");
-
-  const ThemeContext: any = createContext("");
-
-
-  const handleTheme = () => {
-    setTheme((curr) => (curr === "dark" ? "light" : "dark"));
-  }
-
   return (
-
-    <ThemeContext.Provider value={{ theme, handleTheme }}>
-      <div className={theme} id={theme}>
-        <NavBar handleTheme={handleTheme} theme={theme}/>
-        <ScrollToTop/>
-        <SocialLinks />
-        <Home />
-        <About />
-        <Projects />
-        <Experience/>
-        <Contact/>
-        <Footer/>
-      </div>
-    </ThemeContext.Provider>
-
+    <ThemeProvider>
+      <TabProvider>
+        <Layout/>
+      </TabProvider>
+    </ThemeProvider>
   );
 }
 

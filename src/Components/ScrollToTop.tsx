@@ -6,6 +6,7 @@ const ScrollToTop:FC = ()=> {
   const listenToScroll = () => {
     let heigthToHidden = 250;
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+    
     if (winScroll > heigthToHidden) {
       setVisible(true);
     }
@@ -27,7 +28,7 @@ const ScrollToTop:FC = ()=> {
     <>
       {visible &&
         <div className="flex justify-end">
-          <div className='opacity-60 hover:bg-black md:text-4xl text-xl md:w-16 md:h-16 h-10 w-10 fixed bg-black text-white dark:bg-secondary dark:text-primary flex justify-center items-center rounded-full cursor-pointer right-8 bottom-6 overflow-y-hidden z-10' onClick={gotoBtn}><FaArrowUp className='animate-bounce' /></div>
+          <div className='opacity-60 hover:bg-black md:text-4xl text-xl h-10 w-10 fixed bg-black text-white dark:bg-secondary dark:text-primary flex justify-center items-center rounded-full cursor-pointer right-8 bottom-6 overflow-y-hidden z-10' onClick={gotoBtn}><FaArrowUp className='w-5 h-5' /></div>
         </div>
       }
     </>

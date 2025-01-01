@@ -32,7 +32,7 @@ const SocialLinks:FC = ()=> {
             child: (
                 <>Resume <BsFillPersonLinesFill size={30} className="text-blue-800 " /> </>
             ),
-            href: "/Resume.pdf",
+            href: "https://drive.google.com/file/d/1KpHMfZpEdtyBO0FIlfXRLMkSTFrsA23t/view?usp=drivesdk",
             style: 'rounded-tr-md bg-white'
         },
         {
