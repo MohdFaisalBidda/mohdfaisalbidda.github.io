@@ -6,6 +6,7 @@ import { useTab } from "../providers/TabProvider";
 import { useTheme } from "../providers/ThemeProvider";
 import NavBar from "./NavBar";
 import ExperienceTimeline from "./ExperienceTimeline";
+import ProjectCarousel from "./NewAllProjects";
 
 function Layout() {
   const { theme } = useTheme();
@@ -21,7 +22,7 @@ function Layout() {
         return <ExperienceTimeline />;
 
       case "projects":
-        return <Projects />;
+        return <ProjectCarousel />;
 
       case "contact":
         return <Contact />;

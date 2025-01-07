@@ -15,6 +15,36 @@ import {
 import { Button } from "./Button";
 import { Badge } from "./Badge";
 
+interface SkillBadgeGroupProps {
+  skills: string[];
+}
+
+const skills = [
+  "JavaScript",
+  "TypeScript",
+  "C++",
+  "Java",
+  "Solidity",
+  "Next.js",
+  "React",
+  "Prisma",
+  "MongoDB",
+  "PostgreSQL",
+  "Supabase",
+  "MySQL",
+  "Docker",
+  "Redux",
+  "Recoil",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Node.js",
+  "Express.js",
+  "WebSocket",
+  "foundry",
+  "Zod",
+  "Git",
+];
+
 const Home = () => {
   const floatingAnimation = {
     animate: {
@@ -79,7 +109,8 @@ const Home = () => {
               <p className="text-lg mb-6 dark:text-gray-300 text-gray-600">
                 Transforming ideas into elegant digital solutions
               </p>
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+
+              {/* <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
                 {[
                   "React",
                   "Next.js",
@@ -95,7 +126,8 @@ const Home = () => {
                     {tech}
                   </Badge>
                 ))}
-              </div>
+              </div> */}
+              <SkillBadgeGroup skills={skills} />
               <div className="flex gap-4 justify-center lg:justify-start pl-2">
                 <Button size="icon" variant="ghost">
                   <BsGithub className="w-5 h-5 dark:text-gray-300" />
@@ -178,3 +210,13 @@ const Home = () => {
 };
 
 export default Home;
+
+const SkillBadgeGroup: React.FC<SkillBadgeGroupProps> = ({ skills }) => {
+  return (
+    <div className="flex w-full flex-col max-lg:flex-row max-sm:flex-row gap-3 max-sm:gap-2 lg:flex-row mt-4 pr-80 max-[1285px]:px-24 max-lg:px-28 max-sm:px-6 flex-wrap justify-center items-center">
+      {skills.map((skill, index) => (
+        <Badge variant="outline" className="dark:text-white" key={index}>{skill}</Badge>
+      ))}
+    </div>
+  );
+};
