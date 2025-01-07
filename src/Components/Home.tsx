@@ -14,6 +14,7 @@ import {
 } from "react-icons/bs";
 import { Button } from "./Button";
 import { Badge } from "./Badge";
+import { GithubContributions } from "./GithubContributions";
 
 interface SkillBadgeGroupProps {
   skills: string[];
@@ -215,7 +216,9 @@ const SkillBadgeGroup: React.FC<SkillBadgeGroupProps> = ({ skills }) => {
   return (
     <div className="flex w-full flex-col max-lg:flex-row max-sm:flex-row gap-3 max-sm:gap-2 lg:flex-row mt-4 pr-80 max-[1285px]:px-24 max-lg:px-28 max-sm:px-6 flex-wrap justify-center items-center">
       {skills.map((skill, index) => (
-        <Badge variant="outline" className="dark:text-white" key={index}>{skill}</Badge>
+        <Badge variant="outline" className="dark:text-white" key={index}>
+          {skill}
+        </Badge>
       ))}
     </div>
   );
