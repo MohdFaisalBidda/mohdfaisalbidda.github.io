@@ -1,8 +1,9 @@
-import { Briefcase, Home, Mail, Moon, Sun, User } from "lucide-react";
-import {  useTheme } from "../providers/ThemeProvider";
-import {  useTab } from "../providers/TabProvider";
+import { Briefcase, Home, Mail, Moon, Rocket, Sun, User } from "lucide-react";
+import { useTheme } from "../providers/ThemeProvider";
+import { useTab } from "../providers/TabProvider";
 import { Card } from "./Card";
 import { Button } from "./Button";
+import Tooltip from "./Tooltip";
 
 const NavBar = () => {
   const { theme, handleTheme } = useTheme();
@@ -23,38 +24,47 @@ const NavBar = () => {
           } backdrop-blur-xl border-0 shadow-lg"
         >
           <nav className="flex justify-around p-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setActiveTab("home")}
-              className="transition-colors dark:text-blue-400 text-yellow-600"
-            >
-              <Home className="w-5 h-5" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setActiveTab("experience")}
-              className="transition-colors dark:text-blue-400 text-yellow-600"
-            >
-              <Briefcase className="w-5 h-5" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setActiveTab("projects")}
-              className="transition-colors dark:text-blue-400 text-yellow-600"
-            >
-              <User className="w-5 h-5" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setActiveTab("contact")}
-              className="transition-colors dark:text-blue-400 text-yellow-600"
-            >
-              <Mail className="w-5 h-5" />
-            </Button>
+            <Tooltip content="Home" position="top" offset={10}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setActiveTab("home")}
+                className="transition-colors dark:text-blue-400 text-yellow-600"
+              >
+                <Home className="w-5 h-5" />
+              </Button>
+            </Tooltip>
+            <Tooltip content="Experience" position="top" offset={10}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setActiveTab("experience")}
+                className="transition-colors dark:text-blue-400 text-yellow-600"
+              >
+                <Briefcase className="w-5 h-5" />
+              </Button>
+            </Tooltip>
+            <Tooltip content="Projects" position="top" offset={10}>
+              <Button
+                title="Projects"
+                variant="ghost"
+                size="icon"
+                onClick={() => setActiveTab("projects")}
+                className="transition-colors dark:text-blue-400 text-yellow-600"
+              >
+                <Rocket className="w-5 h-5" />
+              </Button>
+            </Tooltip>
+            <Tooltip content="Contact" position="top" offset={10}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setActiveTab("contact")}
+                className="transition-colors dark:text-blue-400 text-yellow-600"
+              >
+                <Mail className="w-5 h-5" />
+              </Button>
+            </Tooltip>
             <Button
               variant="ghost"
               size="icon"

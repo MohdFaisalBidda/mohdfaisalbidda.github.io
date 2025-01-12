@@ -1,20 +1,15 @@
-import React, { useContext } from "react";
-import { AiOutlineRight } from "react-icons/ai";
+import React from "react";
 import Hero from "../assets/hero.png";
 import { motion } from "framer-motion";
-import { TabContext } from "../providers/TabProvider";
 import { Coffee, Github, X } from "lucide-react";
 import {
-  BsFile,
   BsFillPersonLinesFill,
-  BsFolder,
   BsGithub,
   BsLinkedin,
   BsTwitter,
 } from "react-icons/bs";
 import { Button } from "./Button";
 import { Badge } from "./Badge";
-import { GithubContributions } from "./GithubContributions";
 
 interface SkillBadgeGroupProps {
   skills: string[];
@@ -23,25 +18,25 @@ interface SkillBadgeGroupProps {
 const skills = [
   "JavaScript",
   "TypeScript",
-  "C++",
-  "Java",
   "Solidity",
-  "Next.js",
   "React",
+  "Next.js",
+  "Three.js",
   "Prisma",
   "MongoDB",
   "PostgreSQL",
   "Supabase",
   "MySQL",
   "Docker",
+  "Kubernetes",
   "Redux",
   "Recoil",
+  "Zustand",
   "Tailwind CSS",
   "Bootstrap",
   "Node.js",
   "Express.js",
   "WebSocket",
-  "foundry",
   "Zod",
   "Git",
 ];
@@ -111,32 +106,36 @@ const Home = () => {
                 Transforming ideas into elegant digital solutions
               </p>
 
-              {/* <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
-                {[
-                  "React",
-                  "Next.js",
-                  "Node.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                ].map((tech) => (
-                  <Badge
-                    key={tech}
-                    variant="outline"
-                    className="text-sm dark:text-gray-300"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div> */}
               <SkillBadgeGroup skills={skills} />
               <div className="flex gap-4 justify-center lg:justify-start pl-2">
-                <Button size="icon" variant="ghost">
+                <Button
+                  onClick={() =>
+                    window.open("https://github.com/MohdFaisalBidda", "_blank")
+                  }
+                  size="icon"
+                  variant="ghost"
+                >
                   <BsGithub className="w-5 h-5 dark:text-gray-300" />
                 </Button>
-                <Button size="icon" variant="ghost">
+                <Button
+                  onClick={() =>
+                    window.open("https://twitter.com/mohdfaisalbidda", "_blank")
+                  }
+                  size="icon"
+                  variant="ghost"
+                >
                   <BsTwitter className="w-5 h-5 dark:text-gray-300" />
                 </Button>
-                <Button size="icon" variant="ghost">
+                <Button
+                  onClick={() => {
+                    window.open(
+                      "https://linkedin.com/in/mohdfaisalbidda",
+                      "_blank"
+                    );
+                  }}
+                  size="icon"
+                  variant="ghost"
+                >
                   <BsLinkedin className="w-5 h-5 dark:text-gray-300" />
                 </Button>
                 <Button

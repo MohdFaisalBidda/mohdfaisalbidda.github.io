@@ -17,24 +17,24 @@ function ExperienceTimeline() {
           {[
             {
               title: "Full Stack Developer",
-              company: "Tech Innovators Inc",
-              period: "2021 - Present",
+              company: "CG VIZ STUDIO",
+              period: "2024 - Present",
               description:
-                "Led development of enterprise-scale applications using React and Node.js. Implemented microservices architecture and improved system performance by 40%.",
+                "Handling the entire project from initialization to deployment, ensuring that the final product meets the client's expectations and exceeds their requirements for the Multi vendor marketplace and 3D Model Configurator. Developing these application using Next.js and Three.js, catering to a B2B audience by providing customizable 3D model services for client websites. This project further strengthens my experience in understanding client needs and delivering effective solutions in a B2B environment.",
             },
             {
               title: "Freelance",
-              company: "Digital Solutions Ltd",
-              period: "2019 - 2021",
+              company: "Securemyorg.",
+              period: "2023 - 2024",
               description:
-                "Developed and maintained multiple client projects. Introduced automated testing that reduced bugs by 60%.",
+                "I engaged in freelance work with both B2B and B2C clients. My projects involved enhancing layouts, building client-specific websites, and integrating features like blog posting, pagination, and blog listings. This experience allowed me to understand B2C user engagement while also working with B2B clients who had specific organizational needs. Additionally, I contributed to organizational UI screens using React Native and delivered end-to-end MERN-based solutions, especially in food e-commerce, focusing on creating engaging, user-friendly UIs.",
             },
             {
               title: "Full Stack Developer",
-              company: "StartUp Hub",
-              period: "2018 - 2019",
+              company: "Techdarkshak Software LLP",
+              period: "2022 - 2023",
               description:
-                "Worked on front-end development using React and Redux. Collaborated with UX team to implement responsive designs.",
+                "I gained hands-on experience with tech stack, including ReactJS, Next.js, Typescript, TailwindCSS, SCSS, and Firebase. My primary responsibilities involved leading the design and development of the company's website and working on a platform similar to GoDaddy’s hosting solution called 'atomicat.' This project was B2C-focused, allowing users to create and host web pages effortlessly. I played a key role in crafting various components necessary for web page creation and implementing dynamic preview functionalities, enhancing the user experience. I also managed the migration of the platform from ReactJS to Next.js, which significantly boosted its efficiency and scalability.",
             },
           ].map((job, index) => (
             <motion.div

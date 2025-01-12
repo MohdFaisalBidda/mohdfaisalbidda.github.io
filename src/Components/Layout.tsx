@@ -1,12 +1,11 @@
 import React from "react";
-import Projects from "./Projects";
 import Home from "./Home";
 import Contact from "./Contact";
 import { useTab } from "../providers/TabProvider";
 import { useTheme } from "../providers/ThemeProvider";
 import NavBar from "./NavBar";
 import ExperienceTimeline from "./ExperienceTimeline";
-import ProjectCarousel from "./NewAllProjects";
+import Projects from "./Projects";
 
 function Layout() {
   const { theme } = useTheme();
@@ -22,7 +21,7 @@ function Layout() {
         return <ExperienceTimeline />;
 
       case "projects":
-        return <ProjectCarousel />;
+        return <Projects />;
 
       case "contact":
         return <Contact />;
