@@ -1,7 +1,5 @@
-import React, { FC } from "react";
+import  { FC } from "react";
 import { motion } from "framer-motion";
-import { Card } from "./Card";
-import { Button } from "./Button";
 
 const Contact: FC = () => {
   return (

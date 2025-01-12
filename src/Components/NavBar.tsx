@@ -1,4 +1,4 @@
-import { Briefcase, Home, Mail, Moon, Rocket, Sun, User } from "lucide-react";
+import { Briefcase, Home, Mail, Moon, Rocket, Sun } from "lucide-react";
 import { useTheme } from "../providers/ThemeProvider";
 import { useTab } from "../providers/TabProvider";
 import { Card } from "./Card";

@@ -4,8 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import {
   motion,
   AnimatePresence,
-  useScroll,
-  useTransform,
 } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./Button";
@@ -15,7 +13,7 @@ import newsApp from "../assets/news.png";
 import gApp from "../assets/project2.png";
 import NoteKepper from "../assets/NoteKepper.png";
 import Majesty from "../assets/Majesty.png";
-import EcommerceStore from "../assets/project1.png";
+// import EcommerceStore from "../assets/project1.png";
 import Builder from "../assets/builder.png";
 import Adsy from "../assets/adsy.png";
 
@@ -117,8 +115,8 @@ export default function Projects() {
   const timeoutRef = useRef<NodeJS.Timeout>();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 100], [1, 0]);
+  // const { scrollY } = useScroll();
+  // const opacity = useTransform(scrollY, [0, 100], [1, 0]);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
