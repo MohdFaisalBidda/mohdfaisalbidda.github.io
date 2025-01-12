@@ -1,11 +1,11 @@
-import  { FC } from "react";
+import { FC } from "react";
 import { motion } from "framer-motion";
 
 const Contact: FC = () => {
   return (
-    <div className="container mx-auto px-4 pt-20">
+    <div className="lg:container mx-auto lg:px-4 pt-20 px-10">
       {/* About Section */}
-      <main className="container mx-auto px-4 pt-20 pb-28">
+      <main className="lg:container mx-auto px-4 pt-20 pb-28">
         <div className="max-w-4xl mx-auto">
           {/* About Section */}
           <motion.section
@@ -25,11 +25,11 @@ const Contact: FC = () => {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="text-5xl font-bold mb-8 text-amber-500 dark:text-secondary"
+                className="text-3xl lg:text-5xl font-bold mb-8 text-amber-500 dark:text-secondary"
               >
                 About Me
               </motion.h2>
-              <div className="space-y-6 text-lg relative text-gray-600 dark:text-gray-300">
+              <div className="space-y-6 text-sm lg:text-lg relative text-gray-600 dark:text-gray-300">
                 <motion.p
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -75,7 +75,7 @@ const Contact: FC = () => {
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="text-5xl font-bold mb-8 text-amber-500 dark:text-secondary"
+                className="text-3xl lg:text-5xl font-bold mb-8 text-amber-500 dark:text-secondary"
               >
                 Get In Touch
               </motion.h2>
@@ -84,7 +84,7 @@ const Contact: FC = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
-                  className="text-lg relative z-10"
+                  className="text-sm lg:text-lg relative z-10"
                 >
                   My inbox is always open, if you just want to say Hello👋
                 </motion.p>
@@ -92,7 +92,7 @@ const Contact: FC = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.7, duration: 0.5 }}
-                  className="text-lg relative z-10"
+                  className="text-sm lg:text-lg relative z-10"
                 >
                   I'll try my best to get back to you! Feel free to mail me
                   about any job opportunity.

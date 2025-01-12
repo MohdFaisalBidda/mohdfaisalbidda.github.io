@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 function ExperienceTimeline() {
   return (
-    <div className="container mx-auto px-4 pt-20 pb-28">
+    <div className="lg:container mx-auto lg:px-4 pt-20 pb-28 px-10">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -13,7 +13,7 @@ function ExperienceTimeline() {
         <h2 className="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100">
           Experience
         </h2>
-        <div className="space-y-12">
+        <div className="">
           {[
             {
               title: "Full Stack Developer",
@@ -42,7 +42,7 @@ function ExperienceTimeline() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700"
+              className="relative pl-8 border-l-2 pb-12 last:pb-0 border-gray-200 dark:border-gray-700"
             >
               <div className="absolute w-4 h-4 rounded-full -left-[9px] top-0 bg-yellow-400 dark:bg-blue-500" />
               <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-gray-100">

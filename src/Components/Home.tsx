@@ -54,7 +54,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 pt-20 pb-28">
+    <div className="lg:container mx-auto px-4 pt-20 pb-28 w-full">
       <div className="space-y-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ const Home = () => {
               </p>
 
               <SkillBadgeGroup skills={skills} />
-              <div className="flex gap-4 justify-center lg:justify-start pl-2">
+              <div className="flex gap-4 justify-center lg:justify-start pl-2 pt-5 lg:pt-0">
                 <Button
                   onClick={() =>
                     window.open("https://github.com/MohdFaisalBidda", "_blank")
@@ -119,7 +119,7 @@ const Home = () => {
                 </Button>
                 <Button
                   onClick={() =>
-                    window.open("https://twitter.com/mohdfaisalbidda", "_blank")
+                    window.open("https://twitter.com/faisalB299", "_blank")
                   }
                   size="icon"
                   variant="ghost"
@@ -129,7 +129,7 @@ const Home = () => {
                 <Button
                   onClick={() => {
                     window.open(
-                      "https://linkedin.com/in/mohdfaisalbidda",
+                      "https://linkedin.com/in/mohd-faisal-bidda",
                       "_blank"
                     );
                   }}
@@ -164,7 +164,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold mb-12 text-center dark:text-gray-100 text-gray-900">
             About Me
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 px-10 lg:px-0">
             {[
               {
                 title: "Freelancer",

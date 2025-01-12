@@ -190,11 +190,10 @@ export default function Projects() {
           className="relative z-10 h-full grid place-items-center"
         >
           <div className="w-full max-w-5xl px-4">
-            {/* Project Counter */}
 
             {/* Project Card */}
             <motion.div
-              className="relative grid grid-cols-2 gap-8 items-center"
+              className="relative grid lg:grid-cols-2 gap-8 items-center"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -202,7 +201,7 @@ export default function Projects() {
               {/* Project Image */}
               <motion.div
                 whileHover={{ scale: 1.02, rotate: -1 }}
-                className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer"
+                className="relative aspect-auto lg:aspect-[4/3] rounded-lg overflow-hidden cursor-pointer"
                 onClick={() =>
                   window.open(projects[currentIndex].link, "_blank")
                 }
@@ -211,7 +210,7 @@ export default function Projects() {
                 <motion.img
                   src={projects[currentIndex].image}
                   alt={projects[currentIndex].title}
-                  className="w-full h-full object-fill"
+                  className="w-full h-40 lg:w-full lg:h-full object-fill"
                   initial={{ scale: 1.1 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5 }}
@@ -239,7 +238,7 @@ export default function Projects() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-5xl font-bold text-white leading-tight"
+                  className="text-2xl lg:text-5xl font-bold text-white leading-tight"
                 >
                   {projects[currentIndex].title}
                 </motion.h2>
@@ -247,7 +246,7 @@ export default function Projects() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-gray-300 text-lg"
+                  className="text-gray-300 text-sm lg:text-lg"
                 >
                   {projects[currentIndex].description}
                 </motion.p>
