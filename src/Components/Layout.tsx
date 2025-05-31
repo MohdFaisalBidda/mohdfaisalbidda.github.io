@@ -6,6 +6,7 @@ import { useTheme } from "../providers/ThemeProvider";
 import NavBar from "./NavBar";
 import ExperienceTimeline from "./ExperienceTimeline";
 import Projects from "./Projects";
+import MinimalProjects from "./MinimalProjects";
 
 function Layout() {
   const { theme } = useTheme();
@@ -21,7 +22,7 @@ function Layout() {
         return <ExperienceTimeline />;
 
       case "projects":
-        return <Projects />;
+        return <MinimalProjects />;
 
       case "contact":
         return <Contact />;

@@ -27,9 +27,24 @@ module.exports = {
           "0%": { transform: "rotateY(0)" },
           "100%": { transform: "rotateY(-45deg)" },
         },
+        
+        shine: {
+          "0%": {
+            left: "-100%",
+            opacity: "0",
+          },
+          "20%": {
+            opacity: "1",
+          },
+          "100%": {
+            left: "100%",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "rotate-y": "rotateY 1s ease-in-out",
+        shine: "shine 1.5s ease-in-out infinite",
       },
     },
   },

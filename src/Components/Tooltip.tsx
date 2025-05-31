@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 
 type TooltipProps = {
-  children: React.ReactNode; // The element that triggers the tooltip
-  content: React.ReactNode; // The content of the tooltip
-  position?: "top" | "bottom" | "left" | "right"; // Tooltip position
-  offset?: number; // Distance from the trigger element
-  className?: string; // Custom class for the tooltip
+  children: React.ReactNode;
+  content: React.ReactNode;
+  position?: "top" | "bottom" | "left" | "right";
+  offset?: number;
+  className?: string;
 };
 
 const Tooltip: React.FC<TooltipProps> = ({
@@ -39,14 +39,16 @@ const Tooltip: React.FC<TooltipProps> = ({
       <div
         onMouseEnter={() => setVisible(true)}
         onMouseLeave={() => setVisible(false)}
-        className="cursor-pointer"
+        className="cursor-pointer w-full transition-opacity ease-in-out duration-200"
       >
         {children}
       </div>
 
       {visible && (
         <div
-          className={`absolute z-50 px-2 py-1 text-xs dark:text-white text-black dark:bg-primary bg-white rounded shadow-lg ${tooltipPosition()} ${className}`}
+          className={`absolute z-50 px-4 py-1 text-xs dark:text-white text-black dark:bg-primary bg-white rounded shadow-lg ${tooltipPosition()} ${className} transition-opacity duration-200 ease-out origin-center  ${
+            visible ? "opacity-100 scale-100 " : "opacity-0 scale-95 "
+          }`}
           style={{
             marginTop: position === "bottom" ? offset : undefined,
             marginBottom: position === "top" ? offset : undefined,

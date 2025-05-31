@@ -52,7 +52,6 @@ const Contact: FC = () => {
                   real-time functionalities, delivering tailored solutions for
                   diverse client needs.
                 </motion.p>
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl bg-cyan-950/30 dark:bg-cyan-950/30" />
               </div>
             </div>
           </motion.section>

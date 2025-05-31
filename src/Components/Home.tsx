@@ -71,7 +71,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-yellow-300 rounded-full blur-2xl opacity-50" />
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 dark:border-gray-700 border-white/50 shadow-xl">
               <img
-                src={Hero}
+                src={"/assets/hero.png"}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
