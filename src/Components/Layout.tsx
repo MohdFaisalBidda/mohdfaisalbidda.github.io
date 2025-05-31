@@ -5,7 +5,7 @@ import { useTab } from "../providers/TabProvider";
 import { useTheme } from "../providers/ThemeProvider";
 import NavBar from "./NavBar";
 import ExperienceTimeline from "./ExperienceTimeline";
-import Projects from "./Projects";
+// import Projects from "./Projects";
 import MinimalProjects from "./MinimalProjects";
 
 function Layout() {

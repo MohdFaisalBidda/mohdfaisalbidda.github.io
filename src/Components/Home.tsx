@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "../assets/hero.png";
 import { motion } from "framer-motion";
 import { Coffee, Github, X } from "lucide-react";
 import {
