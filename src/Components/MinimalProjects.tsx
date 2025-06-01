@@ -142,6 +142,21 @@ export default function MinimalProjects() {
               className="absolute lg:inset-0"
             >
               <ProjectCard project={projects[currentIndex]} />
+              {/* Dots Indicator */}
+              <div className="absolute -bottom-10 lg:-bottom-8 left-0 right-0 flex justify-center gap-2">
+                {projects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      currentIndex === index
+                        ? "dark:bg-blue-400 bg-yellow-500"
+                        : "dark:bg-gray-600 bg-gray-300"
+                    }`}
+                    aria-label={`Go to project ${index + 1}`}
+                  />
+                ))}
+              </div>
             </motion.div>
           </AnimatePresence>
 
@@ -160,22 +175,6 @@ export default function MinimalProjects() {
           >
             <ChevronRight className="w-6 h-6 dark:text-gray-300 text-gray-700" />
           </button>
-
-          {/* Dots Indicator */}
-          <div className="absolute bottom-40 lg:-bottom-8 left-0 right-0 flex justify-center gap-2">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  currentIndex === index
-                    ? "dark:bg-blue-400 bg-yellow-500"
-                    : "dark:bg-gray-600 bg-gray-300"
-                }`}
-                aria-label={`Go to project ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>
@@ -191,8 +190,7 @@ function ProjectCard({ project }: { project: Project }) {
         whileHover={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 400 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10 dark:to-black/30 z-10 "
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10 dark:to-black/30 z-10 " />
         <img
           src={project.image}
           alt={project.title}
@@ -201,7 +199,7 @@ function ProjectCard({ project }: { project: Project }) {
       </motion.div>
 
       {/* Content Section (Right) */}
-      <div className="lg:w-1/2 h-full flex flex-col justify-center p-6 lg:p-12 dark:bg-gray-800/30 bg-white/30 backdrop-blur-sm rounded-2xl border dark:border-gray-700 border-gray-200">
+      <div className="lg:w-1/2 w-full h-full flex flex-col justify-center p-6 lg:p-12 dark:bg-gray-800/30 bg-white/30 backdrop-blur-sm rounded-2xl border dark:border-gray-700 border-gray-200">
         <div className="flex items-center gap-3 mb-4">
           <Badge
             variant="outline"
