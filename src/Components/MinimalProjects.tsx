@@ -1,114 +1,23 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Github, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Github, ChevronLeft, ChevronRight, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "./Button";
 import { Badge } from "./Badge";
 import Tooltip from "./Tooltip";
+import { projects } from "../constants";
 
-interface Project {
-  id: number;
-  image: string;
-  title: string;
-  subtitle?: string;
-  year?: string;
-  category?: string;
-  description: string;
-  tech: string[];
-  liveUrl: string;
-  githubUrl: string;
-  isSourceCode?: boolean;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    image: "/assets/3dbae.png",
-    title: "3DBAE",
-    subtitle: "Transform Your Product Display with Interactive 3D",
-    year: "2025",
-    category: "Saas",
-    description:
-      "Engage customers and boost sales with immersive 3D product configurators—no coding required. Showcase your products with beautiful 3D visuals. Easy to create, easy to embed—built for e‑commerce.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "PostgreSQL",
-      "Cloudflare",
-      "Docker",
-      "PostgreSQL",
-      "Zod",
-      "Git",
-      "GCP",
-      "Framer Motion",
-    ],
-    liveUrl: "https://3dbae.com",
-    githubUrl: "",
-    isSourceCode: false,
-  },
-  {
-    id: 2,
-    image: "/assets/builder.png",
-    title: "Builder",
-    subtitle: "Drag-and-Drop Form Builder",
-    year: "2024",
-    category: "Web Application",
-    description:
-      "The Builder application empowers users to effortlessly create forms using a visually intuitive drag-and-drop interface, providing a preview feature before saving. Easily share the form link to collect submissions and conveniently manage them through the user-friendly dashboard.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Docker",
-      "PostgreSQL",
-      "Zod",
-      "Git",
-      "Framer Motion",
-      "React DnD",
-    ],
-    liveUrl: "https://dev-the-builder.vercel.app",
-    githubUrl: "https://github.com/MohdFaisalBidda/Builder",
-    isSourceCode: true,
-  },
-  {
-    id: 3,
-    image: "/assets/adsy.png",
-    title: "Adsy Clone",
-    subtitle: "Guest Posting Service",
-    year: "2023",
-    category: "Website Clone",
-    description:
-      "Clone of website named 'Adsy' which is guest posting service website built with using Nextjs, sanity.io, and TailwindCSS.",
-    tech: ["Next.js", "Sanity.io", "Tailwind CSS"],
-    liveUrl: "https://adsy-clone.vercel.app/",
-    githubUrl: "https://github.com/MohdFaisalBidda/Adsy-Clone",
-    isSourceCode: true,
-  },
-];
 
 export default function MinimalProjects() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextProject = () => {
-    setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevProject = () => {
-    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-  };
-
   return (
     <div className="">
       {/* Header */}
       <div className="absolute top-5 right-5 lg:top-10 lg:right-10">
-        <Tooltip content="All Repos" position="left" offset={10}>
+        <Tooltip content="All Repos" position="bottom" offset={10}>
           <Github
             onClick={() =>
               window.open("https://github.com/MohdFaisalBidda", "_blank")
             }
-            className="w-4 h-4 lg:w-8 lg:h-8 text-white cursor-pointer"
+            className="w-4 h-4 lg:w-8 lg:h-8 dark:text-white text-black cursor-pointer"
           />
         </Tooltip>
       </div>
@@ -119,10 +28,10 @@ export default function MinimalProjects() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="secondary" className="mb-2">
             Featured Work
           </Badge>
-          <h1 className="text-4xl lg:text-6xl font-bold mb-4 dark:text-gray-100 text-gray-900">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-2 dark:text-transparent bg-clip-text bg-gradient-to-b dark:from-white dark:via-white text-black tracking-tighter">
             Projects
           </h1>
           <p className="text-lg dark:text-gray-300 text-gray-600 max-w-2xl mx-auto">
@@ -130,136 +39,96 @@ export default function MinimalProjects() {
           </p>
         </motion.div>
 
-        {/* Carousel */}
-        <div className="relative h-[1000px] lg:h-[550px]">
-          <AnimatePresence mode="wait">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
             <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="absolute lg:inset-0"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative h-[320px] w-full rounded-2xl overflow-hidden bg-zinc-900/40 border border-white/5 backdrop-blur-sm cursor-default"
             >
-              <ProjectCard project={projects[currentIndex]} />
-              {/* Dots Indicator */}
-              <div className="absolute -bottom-10 lg:-bottom-8 left-0 right-0 flex justify-center gap-2">
-                {projects.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      currentIndex === index
-                        ? "dark:bg-blue-400 bg-yellow-500"
-                        : "dark:bg-gray-600 bg-gray-300"
-                    }`}
-                    aria-label={`Go to project ${index + 1}`}
-                  />
-                ))}
+              {/* Background Image with Zoom Effect */}
+              <div className="absolute inset-0 overflow-hidden">
+                <motion.img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 ease-out"
+                  whileHover={{ scale: 1.1 }}
+                />
+                {/* Cinematic Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/10 transition-colors duration-500 mix-blend-overlay" />
+              </div>
+
+              {/* Decorative Border Glow */}
+              <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:dark:border-blue-400/50 transition-colors duration-500" />
+
+              {/* Content Container */}
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                {/* Floating Top Elements */}
+                <div className="absolute top-6 right-6 flex gap-2 translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                  <span className="px-2 py-1 text-[10px] font-mono border border-white/20 bg-black/50 backdrop-blur-md rounded text-zinc-300">
+                    {project.year}
+                  </span>
+                </div>
+
+                {/* Text Content Area */}
+                <div className="relative z-10 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+
+                  {/* Title and Tech Line */}
+                  <div className="mb-2">
+                    <h3 className="text-2xl font-bold font-space text-white mb-2 leading-tight tracking-tight">
+                      {project.title}
+                    </h3>
+
+                    {/* Animated Divider */}
+                    <motion.div
+                      className="h-0.5 bg-indigo-500 mb-3 origin-left"
+                      initial={{ width: 0 }}
+                      whileHover={{ width: '40px' }}
+                      transition={{ duration: 0.3 }}
+                    />
+
+                    {/* Tech Stack - Staggered Fade In */}
+                    <div className="flex flex-wrap gap-2 h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 delay-75 overflow-hidden">
+                      {project.tech.map((tag, i) => (
+                        <span
+                          key={tag}
+                          className="text-xs font-medium text-indigo-200 bg-indigo-500/10 px-2 py-1 rounded border border-indigo-500/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Description - Fade/Slide In */}
+                  <div className="overflow-hidden max-h-0 group-hover:max-h-[200px] transition-all duration-500 ease-out">
+                    <p className="text-zinc-300 text-sm leading-relaxed mb-6 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {project.description}
+                    </p>
+
+                    {/* Action Buttons */}
+                    <div className="flex items-center gap-3 pt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150 transform translate-y-4 group-hover:translate-y-0">
+                      <a
+                        href={project.githubUrl}
+                        className="p-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white hover:text-black transition-colors"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                      <a
+                        href={project.liveUrl}
+                        className="p-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white hover:text-black transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevProject}
-            className="absolute -left-14 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full dark:bg-gray-800/50 bg-white/50 backdrop-blur-sm border dark:border-gray-700 border-gray-200 shadow-lg"
-            aria-label="Previous project"
-          >
-            <ChevronLeft className="w-6 h-6 dark:text-gray-300 text-gray-700" />
-          </button>
-          <button
-            onClick={nextProject}
-            className="absolute -right-14 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full dark:bg-gray-800/50 bg-white/50 backdrop-blur-sm border dark:border-gray-700 border-gray-200 shadow-lg"
-            aria-label="Next project"
-          >
-            <ChevronRight className="w-6 h-6 dark:text-gray-300 text-gray-700" />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <div className="h-full w-full flex flex-col lg:flex-row gap-8">
-      {/* Image Section (Left) */}
-      <motion.div
-        className="lg:w-1/2 h-full relative rounded-2xl border dark:border-gray-700 border-gray-200"
-        whileHover={{ scale: 0.98 }}
-        transition={{ type: "spring", stiffness: 400 }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10 dark:to-black/30 z-10 " />
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-fill rounded-sm"
-        />
-      </motion.div>
-
-      {/* Content Section (Right) */}
-      <div className="lg:w-1/2 w-full h-full flex flex-col justify-center p-6 lg:p-12 dark:bg-gray-800/30 bg-white/30 backdrop-blur-sm rounded-2xl border dark:border-gray-700 border-gray-200">
-        <div className="flex items-center gap-3 mb-4">
-          <Badge
-            variant="outline"
-            className="text-xs border-gray-300 dark:border-gray-600 text-black dark:text-white"
-          >
-            {project.category}
-          </Badge>
-          <span className="text-xs dark:text-gray-400 text-gray-500">
-            {project.year}
-          </span>
-        </div>
-
-        <h2 className="text-3xl lg:text-4xl font-bold mb-3 dark:text-gray-100 text-gray-900">
-          {project.title}
-        </h2>
-        <p className="text-lg mb-5 dark:text-gray-300 text-gray-600">
-          {project.subtitle}
-        </p>
-        <p className="mb-8 dark:text-gray-400 text-gray-500 leading-relaxed">
-          {project.description}
-        </p>
-
-        <div className="mb-8">
-          <p className="text-xs uppercase tracking-wider mb-3 dark:text-gray-400 text-gray-500">
-            Built With
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((tech) => (
-              <Badge
-                key={tech}
-                variant="outline"
-                className="text-xs dark:border-gray-600 dark:text-gray-300"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex gap-3 mt-auto">
-          <Button
-            onClick={() => window.open(project.liveUrl, "_blank")}
-            className="relative font-bold 
-    rounded-lg shadow-lg 
-    transition-colors duration-300 text-white bg-primary flex-1 sm:flex-none"
-          >
-            <span className="shiny-overlay-light" />
-            View Live
-            <ArrowUpRight className="w-4 h-4" />
-          </Button>
-          {project.isSourceCode && (
-            <Button
-              variant="ghost"
-              onClick={() => window.open(project.githubUrl, "_blank")}
-              className="dark:text-gray-300 dark:hover:bg-gray-700 flex-1 sm:flex-none transition-all ease-in-out duration-300"
-            >
-              <Github className="mr-2 w-4 h-4" />
-              Source Code
-            </Button>
-          )}
+          ))}
         </div>
       </div>
     </div>

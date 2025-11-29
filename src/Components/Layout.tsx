@@ -11,7 +11,6 @@ import MinimalProjects from "./MinimalProjects";
 function Layout() {
   const { theme } = useTheme();
   const { activeTab } = useTab();
-  console.log(activeTab, "activeTab");
 
   const showTabs = (tab: string): JSX.Element => {
     switch (tab) {
@@ -34,7 +33,7 @@ function Layout() {
   return (
     <div
       className={`min-h-screen w-full $
-    bg-white dark:bg-[#0a192f] transition-colors duration-500 overflow-hidden`}
+    bg-white dark:bg-[#040D12] transition-colors duration-500 overflow-hidden`}
       id={theme}
     >
       <NavBar />
