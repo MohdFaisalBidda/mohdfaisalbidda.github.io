@@ -13,6 +13,7 @@ module.exports = {
     },
     fontFamily: {
       signature: ["Great Vibes"],
+      spaceMono: ["Space Mono", "monospace"],
     },
     extend: {
       colors: {

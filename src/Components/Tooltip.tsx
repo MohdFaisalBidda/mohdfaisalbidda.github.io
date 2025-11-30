@@ -46,7 +46,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 
       {visible && (
         <div
-          className={`absolute z-50 px-4 py-1 text-xs dark:text-white text-black dark:bg-primary bg-white rounded shadow-lg ${tooltipPosition()} ${className} transition-opacity duration-200 ease-out origin-center  ${
+          className={`absolute z-50 px-4 py-1 text-xs dark:text-white/80 text-black dark:bg-[#040D12] bg-white rounded shadow-lg ${tooltipPosition()} ${className} transition-opacity duration-200 ease-out origin-center  ${
             visible ? "opacity-100 scale-100 " : "opacity-0 scale-95 "
           }`}
           style={{

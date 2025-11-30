@@ -1,8 +1,7 @@
-import React from 'react';
-import { Home, Briefcase, User, Mail, Layers, LucideIcon, Coffee, Sword } from 'lucide-react';
+import { Home, Briefcase, Mail, Layers, LucideIcon, Coffee, Sword } from 'lucide-react';
 import { IconType } from 'react-icons';
 import { BsFillPersonLinesFill, BsGithub, BsLinkedin} from 'react-icons/bs';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaThinkPeaks, FaXTwitter } from "react-icons/fa6";
 
 export interface NavItem {
   label: string;
@@ -21,7 +20,8 @@ export interface Experience {
 
 interface Project {
   id: number;
-  image: string;
+  image?: string;
+  video?: string;
   title: string;
   subtitle?: string;
   year?: string;
@@ -87,13 +87,13 @@ export const ABOUTS: AboutItem[] = [
     title: "Freelancer",
     description:
       "Passionate about creating clean, efficient, and scalable solutions that solve real-world problems.",
-    Icon: BsGithub,
+    Icon: Coffee,
   },
   {
     title: "Problem Solver",
     description:
       "Analytical thinker with a knack for finding innovative solutions to complex technical challenges.",
-    Icon: Coffee,
+    Icon: FaThinkPeaks,
   },
   {
     title: "Continuous Learner",
@@ -156,11 +156,50 @@ export const projects: Project[] = [
       "Framer Motion",
     ],
     liveUrl: "https://3dbae.com",
-    githubUrl: "",
+    githubUrl: "https://3dbae.com",
     isSourceCode: false,
   },
   {
     id: 2,
+    video:"/assets/drw.mp4",
+    title: "Drw",
+    subtitle: "Realtime Drawing",
+    year: "2025",
+    category: "Saas",
+    description:
+      "A full-featured collaborative drawing platform built with Next.js, WebSockets, and modern web technologies. This monorepo project enables real-time collaborative drawing, user management, and project sharing.",
+    tech: ["Next.js", "Sanity.io", "Tailwind CSS"],
+    liveUrl: "https://drw-eta.vercel.app/",
+    githubUrl: "https://github.com/MohdFaisalBidda/drw",
+    isSourceCode: true,
+  },
+  {
+    id: 3,
+    video:"/assets/onedot.mp4",
+    title: "OneDot",
+    subtitle: "Focus Journal & Decision Tracker",
+    year: "2025",
+    category: "Saas",
+    description:
+      "Focus Journal & Decision Tracker helps you stay clear and consistent by logging daily goals and important choices with ease. Reflect through simple charts, history, and exports — all in a clean, minimal interface designed for focus.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Docker",
+      "PostgreSQL",
+      "Zod",
+      "Git",
+      "Framer Motion",
+      "Cloudflare",
+    ],
+    liveUrl: "https://one-dot.vercel.app/",
+    githubUrl: "https://github.com/MohdFaisalBidda/OneDot",
+    isSourceCode: true,
+  },
+  {
+    id: 4,
     image: "/assets/builder.png",
     title: "Builder",
     subtitle: "Drag-and-Drop Form Builder",
@@ -182,20 +221,6 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://dev-the-builder.vercel.app",
     githubUrl: "https://github.com/MohdFaisalBidda/Builder",
-    isSourceCode: true,
-  },
-  {
-    id: 3,
-    image: "/assets/adsy.png",
-    title: "Adsy Clone",
-    subtitle: "Guest Posting Service",
-    year: "2023",
-    category: "Website Clone",
-    description:
-      "Clone of website named 'Adsy' which is guest posting service website built with using Nextjs, sanity.io, and TailwindCSS.",
-    tech: ["Next.js", "Sanity.io", "Tailwind CSS"],
-    liveUrl: "https://adsy-clone.vercel.app/",
-    githubUrl: "https://github.com/MohdFaisalBidda/Adsy-Clone",
     isSourceCode: true,
   },
 ];

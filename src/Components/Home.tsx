@@ -1,13 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Coffee, Github, X } from "lucide-react";
-import {
-  BsFillPersonLinesFill,
-  BsGithub,
-  BsLinkedin,
-  BsTwitter,
-} from "react-icons/bs";
-import { Button } from "./Button";
 import { Badge } from "./Badge";
 import { ABOUTS, SOCIALS } from "../constants";
 
@@ -108,7 +100,7 @@ const Home = () => {
               <h1 className="text-4xl lg:text-6xl font-bold mb-4 dark:text-transparent bg-clip-text bg-gradient-to-b dark:from-white dark:via-white text-black">
                 Full Stack Developer
               </h1>
-              <p className="text-lg mb-6 dark:text-gray-300 text-gray-600">
+              <p className="text-xs lg:text-lg mb-6 dark:text-gray-300 text-gray-600">
                 Transforming ideas into elegant digital solutions
               </p>
 
@@ -145,7 +137,7 @@ const Home = () => {
                 className="p-6 rounded-3xl backdrop-blur-sm border dark:border-white/10"
               >
                 <div className="mb-4 flex justify-center">
-                  <IconWrapper icon={Icon} className="w-8 h-8 dark:text-blue-400 text-yellow-600" />
+                  <IconWrapper icon={Icon} className="w-8 h-8 dark:text-blue-400 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-center dark:text-gray-100 text-gray-900">
                   {title}
