@@ -18,7 +18,7 @@ jobs:
         git push origin ${{github.run_id}}
 
     - name: Build
-      run: npm install
+      run: npm install -f
 
     - name: Deploy
       run: |
