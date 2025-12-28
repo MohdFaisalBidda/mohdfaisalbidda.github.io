@@ -168,7 +168,7 @@ export const projects: Project[] = [
     category: "Saas",
     description:
       "A full-featured collaborative drawing platform built with Next.js, WebSockets, and modern web technologies. This monorepo project enables real-time collaborative drawing, user management, and project sharing.",
-    tech: ["Next.js", "Sanity.io", "Tailwind CSS"],
+    tech: ["Next.js", "Bare WebSocket", "Tailwind CSS", "TurboRepo", "TypeScript", "PostgreSQL", "Docker", "PostgreSQL", "Zod", "Git", "Framer Motion"],
     liveUrl: "https://drw-eta.vercel.app/",
     githubUrl: "https://github.com/MohdFaisalBidda/drw",
     isSourceCode: true,

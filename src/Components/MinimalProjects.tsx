@@ -9,7 +9,7 @@ export default function MinimalProjects() {
   return (
     <div className="">
       {/* Header */}
-      <div className="absolute top-5 right-5 lg:top-10 lg:right-10">
+      <div className="flex md:hidden absolute top-5 right-5 lg:top-10 lg:right-10">
         <Tooltip content="All Repos" position="bottom" offset={10}>
           <Github
             onClick={() =>
@@ -90,10 +90,10 @@ export default function MinimalProjects() {
 
                     {/* Action Buttons - Reveal on Hover */}
                     <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-4 group-hover:translate-x-0">
-                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/40 hover:bg-white text-white hover:text-black rounded-full backdrop-blur-md transition-colors border border-white/30">
+                      <a title={`Github ${project.title}`} href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/40 hover:bg-white text-white hover:text-black rounded-full backdrop-blur-md transition-colors border border-white/30">
                         <Github className="w-5 h-5" />
                       </a>
-                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/40 hover:bg-white text-white hover:text-black rounded-full backdrop-blur-md transition-colors border border-white/30">
+                      <a title={`Live ${project.title}`} href={project.liveUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/40 hover:bg-white text-white hover:text-black rounded-full backdrop-blur-md transition-colors border border-white/30">
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     </div>

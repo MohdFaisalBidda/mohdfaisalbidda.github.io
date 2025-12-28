@@ -66,15 +66,17 @@ const Home = () => {
             variants={floatingAnimation}
             animate="animate"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-900 rounded-full blur-2xl opacity-50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-900 rounded-full blur-2xl opacity-40 will-change-transform" />
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 dark:border-white border-white/50 shadow-xl">
               <img
-                src={"/assets/hero.jpg"}
+                src={"/assets/hero.avif"}
                 alt="Profile"
                 className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
               />
             </div>
-            <motion.div
+            {/* <motion.div
               className="absolute inset-0 rounded-full"
               animate={{ rotate: 360 }}
               transition={{
@@ -83,8 +85,8 @@ const Home = () => {
                 ease: "linear",
               }}
             >
-              {/* <div className="w-3 h-3 bg-white rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2" /> */}
-            </motion.div>
+              <div className="w-3 h-3 bg-white rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2" />
+            </motion.div> */}
           </motion.div>
 
           {/* Text Content */}
@@ -142,7 +144,7 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-2 text-center dark:text-gray-100 text-gray-900">
                   {title}
                 </h3>
-                <p className="text-center dark:text-gray-300 text-gray-600 text-balance">
+                <p className="text-sm md:text-base text-center dark:text-gray-300 text-gray-600 text-balance">
                   {description}
                 </p>
               </motion.div>
@@ -150,6 +152,7 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
+      {/* <ScrollIndicator /> */}
     </div>
   );
 };

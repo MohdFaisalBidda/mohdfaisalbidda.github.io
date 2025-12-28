@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import ExperienceTimeline from "./ExperienceTimeline";
 // import Projects from "./Projects";
 import MinimalProjects from "./MinimalProjects";
+import ToggleMode from "./ToggleMode";
 
 function Layout() {
   const { theme } = useTheme();
@@ -86,7 +87,13 @@ function Layout() {
       id={theme}
     >
       <NavBar />
+      <ToggleMode className="hidden md:flex md:fixed md:top-8 md:right-8" iconSize="w-6 h-6"/>
       {showTabs(activeTab)}
+      <div className="hidden md:flex flex-col md:pt-24"> 
+        <ExperienceTimeline />
+        <MinimalProjects />
+        <Contact />
+      </div>
     </div>
   );
 }

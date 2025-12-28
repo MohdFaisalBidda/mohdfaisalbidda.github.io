@@ -81,6 +81,9 @@ const Contact: FC = () => {
             <a
               href="mailto:biddafaisal@gmail.com"
               className="group relative inline-flex items-center gap-3 px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 active:scale-95 overflow-hidden"
+              title="Mail to biddafaisal@gmail.com"
+              target="_blank"
+              rel="noreferrer"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
               <Mail className="w-5 h-5" />
