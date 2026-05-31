@@ -10,6 +10,7 @@
     "gh-pages": "^4.0.0",
     "lucide-react": "^0.469.0",
     "next": "^16.2.6",
+    "next-sitemap": "^4.2.3",
     "react": "^19.2.6",
     "react-activity-calendar": "^2.7.6",
     "react-dom": "^19.2.6",
@@ -19,13 +20,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out --dotfiles"
   },
-
   "devDependencies": {
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",

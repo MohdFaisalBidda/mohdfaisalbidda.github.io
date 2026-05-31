@@ -69,7 +69,7 @@ const NavBar = () => {
               <Mail className="w-4 h-4 transition-colors dark:text-blue-400 text-primary" onClick={() => setActiveTab("contact")} />
             </Tooltip>
             <div className="w-px h-6 bg-black/30  dark:bg-white/30" />
-            <ToggleMode />
+            <ToggleMode iconSize="w-5 h-5" />
           </nav>
         </div>
       </motion.div>

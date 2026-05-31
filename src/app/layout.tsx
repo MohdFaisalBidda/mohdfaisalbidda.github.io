@@ -19,10 +19,10 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Faisal | Full Stack Engineer",
   description:
-    "Portfolio of Mohd Faisal Bidda — Full Stack Engineer building elegant web apps with React, TypeScript, Node.js, and more.",
-  authors: { name: "Mohd Faisal Bidda" },
+    "Portfolio of Mohammad Faisal Bidda — Full Stack Engineer building elegant web apps with React, TypeScript, Node.js, and more.",
+  authors: { name: "Mohammad Faisal Bidda" },
   keywords: [
-    "Mohd Faisal Bidda",
+    "Mohammad Faisal Bidda",
     "Faisal",
     "portfolio",
     "full stack developer",
@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${greatVibes.variable} ${spaceMono.variable}`}>
       <head>
         <link rel="preload" href="/assets/hero.avif" as="image" />
+        <meta name="google-site-verification" content="VRt4G4dBU8fmLw_uJFDz-LCzkBCHQxUVZA9KLhr85p4" />
       </head>
       <body>{children}</body>
     </html>

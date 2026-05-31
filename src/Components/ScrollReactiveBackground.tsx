@@ -80,9 +80,14 @@ export default function ScrollReactiveBackground() {
   const gradientRef = useRef<any>(null);
   const [canRenderWebGL, setCanRenderWebGL] = useState(false);
   const [canvasReady, setCanvasReady] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
     setCanRenderWebGL(isWebGLSupported());
+    setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Handle global click events for ripples (disabled)
@@ -182,7 +187,7 @@ export default function ScrollReactiveBackground() {
           initialization and rendering, so we also have a canRenderWebGL
           check to completely skip rendering the Canvas on unsupported devices.
       */}
-        {canRenderWebGL && (
+        {canRenderWebGL && isDesktop && (
           <ErrorBoundary fallback={<div />}>
             <Canvas
               camera={{ position: [0, 0, 1] }}
@@ -210,12 +215,21 @@ export default function ScrollReactiveBackground() {
 
 function FallbackBackground() {
   return (
-    <div
-      className="pointer-events-none fixed inset-0 z-0 h-full w-full"
-      style={{
-        background:
-          "linear-gradient(180deg, rgb(243, 232, 255) 0%, rgb(232, 225, 254) 20%, rgb(254, 235, 246) 40%, rgb(255, 241, 235) 60%, rgb(237, 237, 251) 80%, rgb(213, 225, 243) 100%)",
-      }}
-    />
+    <>
+      <div
+        className="pointer-events-none fixed inset-0 z-0 h-full w-full dark:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgb(243, 232, 255) 0%, rgb(232, 225, 254) 20%, rgb(254, 235, 246) 40%, rgb(255, 241, 235) 60%, rgb(237, 237, 251) 80%, rgb(213, 225, 243) 100%)",
+        }}
+      />
+      <div
+        className="pointer-events-none fixed inset-0 z-0 h-full w-full hidden dark:block"
+        style={{
+          background:
+            "linear-gradient(180deg, rgb(8, 12, 24) 0%, rgb(18, 22, 42) 20%, rgb(32, 22, 48) 40%, rgb(45, 24, 44) 60%, rgb(24, 28, 52) 80%, rgb(10, 20, 40) 100%)",
+        }}
+      />
+    </>
   );
 }

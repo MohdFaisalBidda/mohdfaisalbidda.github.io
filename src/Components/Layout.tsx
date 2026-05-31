@@ -33,10 +33,10 @@ function Layout() {
       contact: "Contact | Faisal",
     };
     const descMap: Record<string, string> = {
-      home: "Portfolio of Mohd Faisal Bidda — Full Stack Engineer building elegant web apps with React, TypeScript, Node.js, and more.",
-      experience: "Professional experience and timeline of Mohd Faisal Bidda.",
-      projects: "Selected projects by Mohd Faisal Bidda showcasing full stack skills.",
-      contact: "Get in touch with Mohd Faisal Bidda for collaboration or opportunities.",
+      home: "Portfolio of Mohammad Faisal Bidda — Full Stack Engineer building elegant web apps with React, TypeScript, Node.js, and more.",
+      experience: "Professional experience and timeline of Mohammad Faisal Bidda.",
+      projects: "Selected projects by Mohammad Faisal Bidda showcasing full stack skills.",
+      contact: "Get in touch with Mohammad Faisal Bidda for collaboration or opportunities.",
     };
 
     const title = titleMap[activeTab] || "Faisal's Portfolio";
@@ -102,11 +102,9 @@ function Layout() {
         }}
       /> */}
 
-      {isDesktop && (
-        <Suspense fallback={null}>
-          <ScrollReactiveBackground />
-        </Suspense>
-      )}
+      <Suspense fallback={null}>
+        <ScrollReactiveBackground />
+      </Suspense>
 
       <div
         className={`relative z-10 min-h-screen w-full transition-colors duration-500`}
