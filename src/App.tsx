@@ -1,4 +1,5 @@
-import "./App.css";
+"use client";
+
 import { TabProvider } from "./providers/TabProvider";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import Layout from "./Components/Layout";

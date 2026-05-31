@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import { Badge } from "./Badge";
@@ -62,6 +64,8 @@ export default function MinimalProjects() {
                     alt={project.title}
                     className="h-full w-full object-contain transition-transform duration-700 ease-out"
                     whileHover={{ scale: 1.05 }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
                   />
                 }
 

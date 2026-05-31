@@ -1,4 +1,6 @@
-import { createContext, FC, ReactNode, useContext, useState } from "react";
+"use client";
+
+import { createContext, FC, ReactNode, useContext, useEffect, useState } from "react";
 
 interface TabContextType {
   activeTab: string;
@@ -13,9 +15,12 @@ const defaultTabContext: TabContextType = {
 export const TabContext = createContext<TabContextType>(defaultTabContext);
 
 export const TabProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState(
-    localStorage.getItem("activeTab") || "home"
-  );
+  const [activeTab, setActiveTab] = useState("home");
+
+  useEffect(() => {
+    const stored = localStorage.getItem("activeTab");
+    if (stored) setActiveTab(stored);
+  }, []);
   const handleActiveTab = (tab: string) => {
     console.log("Setting activeTab to:", tab);
     setActiveTab(tab);

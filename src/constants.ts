@@ -1,5 +1,5 @@
 import { Home, Briefcase, Mail, Layers, LucideIcon, Coffee, Sword } from 'lucide-react';
-import { IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
 import { BsFillPersonLinesFill, BsGithub, BsLinkedin} from 'react-icons/bs';
 import { FaThinkPeaks, FaXTwitter } from "react-icons/fa6";
 
@@ -77,7 +77,7 @@ export const SOCIALS: Social[] = [
   },
   {
     platform: 'Resume',
-    url:'https://drive.google.com/file/d/13jXmKJoHfzrvRZloTQxnoc1b7mS4GM_i/view?usp=sharing',
+    url:'https://drive.google.com/file/d/1lCLPsXKsMGDmeQ7zO7TRhPU6qFU5Ts6Z/view?usp=sharing',
     icon:BsFillPersonLinesFill
   }
 ];
@@ -134,7 +134,7 @@ export const EXPERIENCES: Experience[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    image: "/assets/3dbae.png",
+    image: "/assets/3dbae.webp",
     title: "3DBAE",
     subtitle: "Transform Your Product Display with Interactive 3D",
     year: "2025",
@@ -149,7 +149,6 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Cloudflare",
       "Docker",
-      "PostgreSQL",
       "Zod",
       "Git",
       "GCP",
@@ -168,7 +167,7 @@ export const projects: Project[] = [
     category: "Saas",
     description:
       "A full-featured collaborative drawing platform built with Next.js, WebSockets, and modern web technologies. This monorepo project enables real-time collaborative drawing, user management, and project sharing.",
-    tech: ["Next.js", "Bare WebSocket", "Tailwind CSS", "TurboRepo", "TypeScript", "PostgreSQL", "Docker", "PostgreSQL", "Zod", "Git", "Framer Motion"],
+    tech: ["Next.js", "Bare WebSocket", "Tailwind CSS", "TurboRepo", "TypeScript", "PostgreSQL", "Docker", "Zod", "Git", "Framer Motion"],
     liveUrl: "https://drw-eta.vercel.app/",
     githubUrl: "https://github.com/MohdFaisalBidda/drw",
     isSourceCode: true,
@@ -188,7 +187,6 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "PostgreSQL",
       "Docker",
-      "PostgreSQL",
       "Zod",
       "Git",
       "Framer Motion",
@@ -200,7 +198,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    image: "/assets/builder.png",
+    image: "/assets/builder.webp",
     title: "Builder",
     subtitle: "Drag-and-Drop Form Builder",
     year: "2024",
@@ -213,7 +211,6 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "PostgreSQL",
       "Docker",
-      "PostgreSQL",
       "Zod",
       "Git",
       "Framer Motion",

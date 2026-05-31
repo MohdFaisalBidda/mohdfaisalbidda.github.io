@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useState, useEffect, useContext } from "react";
 
 export const ThemeContext = createContext({
@@ -8,10 +10,13 @@ export const ThemeContext = createContext({
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState(() => {
-    // Load theme from localStorage or fallback to light
-    return localStorage.getItem("theme") || "light";
-  });
+  const [theme, setTheme] = useState("light");
+
+  // Load theme from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem("theme") || "light";
+    setTheme(stored);
+  }, []);
 
   // Update theme on the document root
   useEffect(() => {

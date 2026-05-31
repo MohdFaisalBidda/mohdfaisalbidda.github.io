@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "./Badge";
@@ -45,7 +47,7 @@ const Contact: FC = () => {
 
             <div className="space-y-4 text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
               <p>
-                I'm <span className="font-semibold text-slate-900 dark:text-white">Faisal</span>, a Full Stack Developer passionate about building scalable, user-friendly web and mobile applications. I specialize in creating high-performance interfaces and end-to-end systems, and I’ve deployed production-ready applications using Docker, Cloud Run, and other cloud services.
+                I'm <span className="font-semibold text-slate-900 dark:text-white">Faisal</span>, a Full Stack Engineer passionate about building scalable, user-friendly web and mobile applications. I specialize in creating high-performance interfaces and end-to-end systems, and I’ve deployed production-ready applications using Docker, Cloud Run, and other cloud services.
               </p>
               <p>
                 With expertise in <span className="text-blue-600 dark:text-blue-400">ReactJS, Next.js, TypeScript, and Three.js</span>, I’ve worked on projects ranging from full-featured web platforms to advanced 3D model configurators. My experience includes UI/UX design, full-stack development, real-time interactive features, scalable architecture, and DevOps practices that ensure smooth deployment and performance.

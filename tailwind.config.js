@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./src/app/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
       xsm: "200px",
@@ -12,8 +12,8 @@ module.exports = {
       "2xl": "1536px",
     },
     fontFamily: {
-      signature: ["Great Vibes"],
-      spaceMono: ["Space Mono", "monospace"],
+      signature: ["var(--font-great-vibes)", "cursive"],
+      spaceMono: ["var(--font-space-mono)", "monospace"],
     },
     extend: {
       colors: {

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Badge } from "./Badge";
@@ -46,7 +48,7 @@ const Home = () => {
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     },
   };
@@ -54,12 +56,7 @@ const Home = () => {
   return (
     <div className="lg:container mx-auto px-4 pt-20 pb-28 w-full">
       <div className="space-y-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col lg:flex-row items-center gap-12"
-        >
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Profile Image with Enhanced Background */}
           <motion.div
             className="relative"
@@ -69,38 +66,27 @@ const Home = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-900 rounded-full blur-2xl opacity-40 will-change-transform" />
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 dark:border-white border-white/50 shadow-xl">
               <img
-                src={"/assets/hero.avif"}
+                src={"/assets/hero.webp"}
                 alt="Profile"
+                width={256}
+                height={256}
                 className="w-full h-full object-cover"
                 loading="eager"
                 decoding="async"
+                sizes="256px"
+                fetchPriority="high"
               />
             </div>
-            {/* <motion.div
-              className="absolute inset-0 rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              <div className="w-3 h-3 bg-white rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2" />
-            </motion.div> */}
           </motion.div>
 
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
+            <div>
               <Badge variant="secondary" className="mb-4">
                 Open to Contribute
               </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-4 dark:text-transparent bg-clip-text bg-gradient-to-b dark:from-white dark:via-white text-black">
-                Full Stack Developer
+              <h1 className="text-4xl lg:text-6xl font-bold mb-4 dark:text-transparent bg-clip-text bg-gradient-to-b dark:from-white dark:via-white text-gray-900">
+                Full Stack Engineer
               </h1>
               <p className="text-xs lg:text-lg mb-6 dark:text-gray-300 text-gray-600">
                 Transforming ideas into elegant digital solutions
@@ -113,15 +99,15 @@ const Home = () => {
                   return (
                     <IconComponent
                       key={idx}
-                      className="w-5 h-5 dark:text-gray-300 cursor-pointer hover:scale-110 transition-all duration-300"
+                      className="w-5 h-5 text-gray-700 dark:text-gray-300 cursor-pointer hover:scale-110 transition-all duration-300"
                       onClick={() => window.open(url, "_blank")}
                     />
                   );
                 })}
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Enhanced About Section */}
         <motion.div
@@ -136,10 +122,10 @@ const Home = () => {
                 key={idx}
                 // variants={floatingAnimation}
                 animate="animate"
-                className="p-6 rounded-3xl backdrop-blur-sm border dark:border-white/10"
+                className="p-6 rounded-3xl backdrop-blur-sm bg-transparent border border-black/10 dark:border-white/10"
               >
                 <div className="mb-4 flex justify-center">
-                  <IconWrapper icon={Icon} className="w-8 h-8 dark:text-blue-400 text-primary" />
+                  <IconWrapper icon={Icon} className="w-8 h-8 dark:text-blue-400 text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-center dark:text-gray-100 text-gray-900">
                   {title}
@@ -163,7 +149,7 @@ const SkillBadgeGroup: React.FC<SkillBadgeGroupProps> = ({ skills }) => {
   return (
     <div className="flex w-full flex-col max-lg:flex-row max-sm:flex-row gap-3 max-sm:gap-2 lg:flex-row mt-4 pr-80 max-[1285px]:px-24 max-lg:px-28 max-sm:px-6 flex-wrap justify-center items-center">
       {skills.map((skill, index) => (
-        <Badge variant="outline" className="dark:text-white dark:border-white/30" key={index}>
+        <Badge variant="outline" className="text-gray-600 dark:text-white border-gray-300 dark:border-white/30" key={index}>
           {skill}
         </Badge>
       ))}

@@ -1,3 +1,5 @@
+"use client";
+
 import { Briefcase, Home, Mail, Rocket } from "lucide-react";
 import { useTab } from "../providers/TabProvider";
 import Tooltip from "./Tooltip";

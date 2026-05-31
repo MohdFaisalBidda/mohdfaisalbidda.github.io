@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Experience } from "../constants";
@@ -94,7 +96,7 @@ function ExperienceTimeline() {
                     layout
                     className={`p-6 md:p-8 rounded-2xl border transition-all duration-300
                          ${isActive
-                        ? 'bg-gradient-to-br from-white via-white to-blue-50/50 dark:from-zinc-900/90 dark:via-zinc-900/90 dark:to-zinc-800/50 border-primary/10 dark:border-white/10 shadow-xl shadow-blue-500/5 dark:shadow-black/50 border-l-4 border-l-blue-400 dark:border-l-blue-400'
+                        ? 'bg-transparent dark:from-zinc-900/90 dark:via-zinc-900/90 dark:to-zinc-800/50 border-primary/10 dark:border-white/10 shadow-xl shadow-blue-500/5 dark:shadow-black/50 border-l-4 border-l-blue-400 dark:border-l-blue-400'
                         : 'bg-transparent border-transparent hover:bg-white/[0.02] '
                       }
                        `}

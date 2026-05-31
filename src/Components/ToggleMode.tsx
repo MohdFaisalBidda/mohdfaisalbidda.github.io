@@ -1,3 +1,5 @@
+"use client";
+
 import { KeyboardEvent } from 'react';
 import { useTheme } from '../providers/ThemeProvider';
 import { Moon, Sun } from 'lucide-react';

@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+"use client";
+
+import React, { useEffect, lazy, Suspense } from "react";
 import Home from "./Home";
-import Contact from "./Contact";
 import { useTab } from "../providers/TabProvider";
 import { useTheme } from "../providers/ThemeProvider";
 import NavBar from "./NavBar";
-import ExperienceTimeline from "./ExperienceTimeline";
-// import Projects from "./Projects";
-import MinimalProjects from "./MinimalProjects";
 import ToggleMode from "./ToggleMode";
+
+const ExperienceTimeline = lazy(() => import("./ExperienceTimeline"));
+const MinimalProjects = lazy(() => import("./MinimalProjects"));
+const Contact = lazy(() => import("./Contact"));
+
+const ScrollReactiveBackground = lazy(() => import("./ScrollReactiveBackground"));
 
 function Layout() {
   const { theme } = useTheme();
@@ -15,13 +19,13 @@ function Layout() {
 
   useEffect(() => {
     const titleMap: Record<string, string> = {
-      home: "Faisal | Full Stack Developer",
+      home: "Faisal | Full Stack Engineer",
       experience: "Experience | Faisal",
       projects: "Projects | Faisal",
       contact: "Contact | Faisal",
     };
     const descMap: Record<string, string> = {
-      home: "Portfolio of Mohd Faisal Bidda — Full Stack Developer building elegant web apps with React, TypeScript, Node.js, and more.",
+      home: "Portfolio of Mohd Faisal Bidda — Full Stack Engineer building elegant web apps with React, TypeScript, Node.js, and more.",
       experience: "Professional experience and timeline of Mohd Faisal Bidda.",
       projects: "Selected projects by Mohd Faisal Bidda showcasing full stack skills.",
       contact: "Get in touch with Mohd Faisal Bidda for collaboration or opportunities.",
@@ -62,39 +66,52 @@ function Layout() {
     ensureMeta("meta[name='twitter:description']", { name: "twitter:description", content: description });
   }, [activeTab]);
 
-  const showTabs = (tab: string): JSX.Element => {
+  const showTabs = (tab: string): React.ReactNode => {
     switch (tab) {
       case "home":
         return <Home />;
 
       case "experience":
-        return <ExperienceTimeline />;
+        return <Suspense fallback={null}><ExperienceTimeline /></Suspense>;
 
       case "projects":
-        return <MinimalProjects />;
+        return <Suspense fallback={null}><MinimalProjects /></Suspense>;
 
       case "contact":
-        return <Contact />;
+        return <Suspense fallback={null}><Contact /></Suspense>;
 
       default:
         return <></>;
     }
   };
   return (
-    <div
-      className={`min-h-screen w-full $
-    bg-white dark:bg-[#040D12] transition-colors duration-500 overflow-hidden`}
-      id={theme}
-    >
-      <NavBar />
-      <ToggleMode className="hidden md:flex md:fixed md:top-8 md:right-8" iconSize="w-6 h-6"/>
-      {showTabs(activeTab)}
-      <div className="hidden md:flex flex-col md:pt-24"> 
-        <ExperienceTimeline />
-        <MinimalProjects />
-        <Contact />
+    <>
+      {/* <div
+        className="fixed inset-0 -z-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgb(243,232,255) 0%, rgb(232,225,254) 20%, rgb(254,235,246) 40%, rgb(255,241,235) 60%, rgb(237,237,251) 80%, rgb(213,225,243) 100%)",
+        }}
+      /> */}
+
+      <Suspense fallback={null}>
+        <ScrollReactiveBackground />
+      </Suspense>
+
+      <div
+        className={`relative z-10 min-h-screen w-full transition-colors duration-500`}
+        id={theme}
+      >
+        <NavBar />
+        <ToggleMode className="hidden md:flex md:fixed md:top-8 md:right-8" iconSize="w-6 h-6" />
+        {showTabs(activeTab)}
+        <div className="hidden md:flex flex-col md:pt-24">
+          <Suspense fallback={null}><ExperienceTimeline /></Suspense>
+          <Suspense fallback={null}><MinimalProjects /></Suspense>
+          <Suspense fallback={null}><Contact /></Suspense>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -8,14 +8,14 @@ import {
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./Button";
 import { Badge } from "./Badge";
-import colorApp from "../assets/project3.png";
-import newsApp from "../assets/news.png";
-import gApp from "../assets/project2.png";
-import NoteKepper from "../assets/NoteKepper.png";
-import Majesty from "../assets/Majesty.png";
+const colorApp = "/assets/project3.png";
+const newsApp = "/assets/news.png";
+const gApp = "/assets/project2.png";
+const NoteKepper = "/assets/NoteKepper.png";
+const Majesty = "/assets/Majesty.png";
 // import EcommerceStore from "../assets/project1.png";
-import Builder from "../assets/builder.png";
-import Adsy from "../assets/adsy.png";
+const Builder = "/assets/builder.png";
+const Adsy = "/assets/adsy.png";
 
 interface Project {
   id: number;
@@ -112,7 +112,7 @@ const projects: Project[] = [
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // const { scrollY } = useScroll();
