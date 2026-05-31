@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, lazy, Suspense } from "react";
+import React, { useEffect, lazy, Suspense, useState } from "react";
 import Home from "./Home";
 import { useTab } from "../providers/TabProvider";
 import { useTheme } from "../providers/ThemeProvider";
@@ -16,6 +16,14 @@ const ScrollReactiveBackground = lazy(() => import("./ScrollReactiveBackground")
 function Layout() {
   const { theme } = useTheme();
   const { activeTab } = useTab();
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const titleMap: Record<string, string> = {
@@ -94,9 +102,11 @@ function Layout() {
         }}
       /> */}
 
-      <Suspense fallback={null}>
-        <ScrollReactiveBackground />
-      </Suspense>
+      {isDesktop && (
+        <Suspense fallback={null}>
+          <ScrollReactiveBackground />
+        </Suspense>
+      )}
 
       <div
         className={`relative z-10 min-h-screen w-full transition-colors duration-500`}
