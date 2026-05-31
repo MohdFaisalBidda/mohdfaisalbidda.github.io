@@ -220,7 +220,7 @@ function FallbackBackground() {
         className="pointer-events-none fixed inset-0 z-0 h-full w-full dark:hidden"
         style={{
           background:
-            "linear-gradient(180deg, rgb(243, 232, 255) 0%, rgb(232, 225, 254) 20%, rgb(254, 235, 246) 40%, rgb(255, 241, 235) 60%, rgb(237, 237, 251) 80%, rgb(213, 225, 243) 100%)",
+            "linear-gradient(180deg, rgb(250, 250, 252) 0%, rgb(245, 245, 250) 50%, rgb(240, 240, 248) 100%)",
         }}
       />
       <div

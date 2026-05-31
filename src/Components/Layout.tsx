@@ -102,9 +102,11 @@ function Layout() {
         }}
       /> */}
 
-      <Suspense fallback={null}>
-        <ScrollReactiveBackground />
-      </Suspense>
+      {activeTab === "home" && (
+        <Suspense fallback={null}>
+          <ScrollReactiveBackground />
+        </Suspense>
+      )}
 
       <div
         className={`relative z-10 min-h-screen w-full transition-colors duration-500`}
