@@ -13,6 +13,28 @@ const Contact = lazy(() => import("./Contact"));
 
 const ScrollReactiveBackground = lazy(() => import("./ScrollReactiveBackground"));
 
+function FallbackBackground() {
+  const { theme } = useTheme();
+  if (theme === "dark") {
+    return (
+      <div className="pointer-events-none fixed inset-0 z-0 h-full w-full"
+        style={{
+          background:
+            "linear-gradient(180deg, rgb(8, 12, 24) 0%, rgb(18, 22, 42) 20%, rgb(32, 22, 48) 40%, rgb(45, 24, 44) 60%, rgb(24, 28, 52) 80%, rgb(10, 20, 40) 100%)",
+        }}
+      />
+    );
+  }
+  return (
+    <div className="pointer-events-none fixed inset-0 z-0 h-full w-full"
+      style={{
+        background:
+          "linear-gradient(180deg, rgb(250, 250, 252) 0%, rgb(245, 245, 250) 50%, rgb(240, 240, 248) 100%)",
+      }}
+    />
+  );
+}
+
 function Layout() {
   const { theme } = useTheme();
   const { activeTab } = useTab();
@@ -94,19 +116,11 @@ function Layout() {
   };
   return (
     <>
-      {/* <div
-        className="fixed inset-0 -z-20"
-        style={{
-          background:
-            "linear-gradient(180deg, rgb(243,232,255) 0%, rgb(232,225,254) 20%, rgb(254,235,246) 40%, rgb(255,241,235) 60%, rgb(237,237,251) 80%, rgb(213,225,243) 100%)",
-        }}
-      /> */}
+      <FallbackBackground />
 
-      {activeTab === "home" && (
-        <Suspense fallback={null}>
-          <ScrollReactiveBackground />
-        </Suspense>
-      )}
+      <Suspense fallback={null}>
+        <ScrollReactiveBackground />
+      </Suspense>
 
       <div
         className={`relative z-10 min-h-screen w-full transition-colors duration-500`}

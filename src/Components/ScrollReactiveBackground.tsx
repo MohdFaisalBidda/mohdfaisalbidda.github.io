@@ -174,7 +174,6 @@ export default function ScrollReactiveBackground() {
 
   return (
     <>
-      <FallbackBackground />
       <div
         className="pointer-events-none fixed inset-0 z-0 h-full w-full transition-opacity duration-[3000ms] ease-out"
         style={{ opacity: canvasReady ? 1 : 0 }}
